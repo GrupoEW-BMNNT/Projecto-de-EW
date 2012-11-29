@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="42" version="2.0">
+<workbenchAdvisor/>
+<window height="768" width="1024" x="84" y="32">
+<fastViewData fastViewLocation="1024"/>
+<intro standby="false"/>
+<perspectiveBar>
+<itemSize x="205"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="106" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="com.webratio.ide.styles.TemplateCreationActionSet" itemType="typeToolBarContribution" x="40" y="22"/>
+<coolItem id="com.webratio.ide.ui.compare.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.webratio.ide.store.ui.toolbar" itemType="typeToolBarContribution" x="32" y="22"/>
+<coolItem id="com.webratio.ide.ui.tomcat.TomcatActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="100" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="40" y="22"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="152" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.webratio.ide.ui.editors.WebProjectEditor" itemType="typeToolBarContribution" x="178" y="22"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1354147756334" focus="true" label="Workspace - WebRatio">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor activePart="true" focus="true" id="com.webratio.ide.ui.editors.WebProjectEditor" name="Model.wr" partName="CCUM" path="/Users/tac/Dropbox/MEI/ACS/EW/Projecto-de-EW/CCUM/Model.wr" title="CCUM" tooltip="CCUM/Model.wr" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CCUM/Model.wr"/>
+</editor>
+</editors>
+<views>
+<view id="com.webratio.ide.ui.grid.views.GridView" partName="Grid">
+<viewState/>
+</view>
+<view id="com.webratio.ide.ui.views.GenerationErrorsView" partName="Generation Errors"/>
+<view id="com.webratio.ide.ui.explorer.views.WRExplorerView" partName="WebRatio Explorer">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1354147756334">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.ui.internal.introview" partName="Welcome">
+<viewState>
+<presentation currentPage="firststeps" restore="true"/>
+<standbyPart/>
+</viewState>
+</view>
+<view id="com.webratio.bpm.ui.views.BPMDocumentationView" partName="Documentation"/>
+<view id="com.webratio.ide.ui.views.WRAerialView" partName="Overview"/>
+<view id="com.webratio.bpm.ui.explorer.views.BPMExplorerView" partName="BPM Explorer"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.ui.internal.introview" activePerspective="com.webratio.ide.ui.WRPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.webratio.bpm.ui.BPMPerspectiveFactory" id="com.webratio.bpm.ui.BPMPerspective" label="BPM"/>
+<alwaysOnActionSet id="com.webratio.bpm.ui.doc.user.actionSet"/>
+<alwaysOnActionSet id="com.webratio.bpm.ui.actionSet2"/>
+<alwaysOnActionSet id="com.webratio.mf.ui.actionSet"/>
+<alwaysOnActionSet id="com.webratio.commons.startup.actionSet"/>
+<alwaysOnActionSet id="com.webratio.ide.ui.doc.user.actionSet"/>
+<alwaysOnActionSet id="com.webratio.ide.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="com.webratio.bpm.ui.actionSet"/>
+<alwaysOnActionSet id="com.webratio.bpm.ui.transform.actionSet"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="com.webratio.bpm.ui.views.BPMDocumentationView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<new_wizard_action id="com.webratio.bpm.ui.wizards.BusinessModelingProjectWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.wizards.NewBPMDiagramWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.wizards.NewBOWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.wizards.NewRolesWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.wizards.NewSignalWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.transform.wizards.NewBAMProjectWizard"/>
+<perspective_action id="com.webratio.bpm.ui.BPMPerspective"/>
+<perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="com.webratio.bpm.ui.explorer.views.BPMExplorerView"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="com.webratio.ide.ui.views.WRAerialView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="com.webratio.bpm.ui.views.BPMDocumentationView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder appearance="2" expanded="2">
+<page content="com.webratio.bpm.ui.explorer.views.BPMExplorerView" label="BPM Explorer"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.23917323" ratioLeft="243" ratioRight="773" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.8491947" ratioLeft="580" ratioRight="103" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="com.webratio.bpm.ui.views.BPMDocumentationView" label="Documentation"/>
+</folder>
+</info>
+<info folder="true" part="leftBottom2" ratio="0.41874084" ratioLeft="286" ratioRight="397" relationship="4" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+</folder>
+</info>
+<info folder="true" part="leftBottom3" ratio="0.64987403" ratioLeft="258" ratioRight="139" relationship="4" relative="leftBottom2">
+<folder appearance="2" expanded="2">
+<page content="com.webratio.ide.ui.views.WRAerialView" label="Overview"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.webratio.ide.ui.WRPerspectiveFactory" id="com.webratio.ide.ui.WRPerspective" label="WebRatio"/>
+<alwaysOnActionSet id="com.webratio.bpm.ui.doc.user.actionSet"/>
+<alwaysOnActionSet id="com.webratio.bpm.ui.actionSet2"/>
+<alwaysOnActionSet id="com.webratio.mf.ui.actionSet"/>
+<alwaysOnActionSet id="com.webratio.commons.startup.actionSet"/>
+<alwaysOnActionSet id="com.webratio.ide.ui.doc.user.actionSet"/>
+<alwaysOnActionSet id="com.webratio.ide.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="com.webratio.ide.styles.TemplateCreationActionSet"/>
+<alwaysOnActionSet id="com.webratio.ide.ui.tomcat.TomcatActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<new_wizard_action id="com.webratio.ide.ui.wizards.WebProjectWizard"/>
+<new_wizard_action id="com.webratio.ide.styles.ui.wizards.StyleProjectWizard"/>
+<new_wizard_action id="com.webratio.ide.styles.ui.wizards.LayoutTemplateWizard"/>
+<new_wizard_action id="com.webratio.ide.styles.ui.wizards.StylePageWizard"/>
+<new_wizard_action id="com.webratio.ide.units.ui.wizards.UnitsProjectWizard"/>
+<new_wizard_action id="com.webratio.ide.units.ui.wizards.UnitWizard"/>
+<new_wizard_action id="com.webratio.ide.components.ui.wizards.NewValidationRuleWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.wizards.BusinessModelingProjectWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.wizards.NewBPMDiagramWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.wizards.NewBOWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.wizards.NewRolesWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.wizards.NewSignalWizard"/>
+<new_wizard_action id="com.webratio.bpm.ui.transform.wizards.NewBAMProjectWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<perspective_action id="com.webratio.ide.ui.WRPerspective"/>
+<perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="com.webratio.ide.ui.explorer.views.WRExplorerView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="com.webratio.ide.ui.views.WRAerialView"/>
+<view id="com.webratio.ide.ui.grid.views.GridView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="com.webratio.ide.ui.views.GenerationErrorsView"/>
+<view id="org.eclipse.ui.internal.introview"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="com.webratio.ide.ui.explorer.views.WRExplorerView" appearance="2" expanded="2">
+<page content="com.webratio.ide.ui.explorer.views.WRExplorerView" label="WebRatio Explorer"/>
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@5b8767ad" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="left">
+<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="1">
+<page content="org.eclipse.ui.internal.introview" label="Welcome"/>
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="254" ratioRight="762" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.6998536" ratioLeft="478" ratioRight="205" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="com.webratio.ide.ui.grid.views.GridView" appearance="2" expanded="2">
+<page content="com.webratio.ide.ui.grid.views.GridView" label="Grid"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="com.webratio.ide.ui.views.GenerationErrorsView" label="Generation Errors"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="leftBottom" ratio="0.5988287" ratioLeft="409" ratioRight="274" relationship="4" relative="left">
+<folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<page content="com.webratio.ide.ui.views.WRAerialView" label="Overview"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.webratio.ide.ui.editors.WebProjectEditor" path="/CCUM/Model.wr"/>
+</editors>
+<item active="true" historyLabel="CCUM" index="0"/>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.webratio.ide.ui.editors.WebProjectEditor" name="Model.wr" tooltip="CCUM/Model.wr">
+<persistable path="/CCUM/Model.wr"/>
+</file>
+</mruList>
+</workbench>
