@@ -1,15 +1,15 @@
 <DataModel xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="20" gr:y="158" gr:hideAttributes="false" attributeOrder="userOID userName password email">
+  <Entity id="User" name="User" duration="persistent" gr:x="510" gr:y="430" gr:hideAttributes="false" attributeOrder="userOID userName password email">
     <Attribute name="oid" id="userOID" type="integer" key="true"/>
     <Attribute name="userName" id="userName" type="string"/>
     <Attribute name="password" id="password" type="password"/>
     <Attribute name="email" id="email" type="string"/>
   </Entity>
-  <Entity id="Group" name="Group" duration="persistent" gr:x="250" gr:y="178" gr:hideAttributes="false" attributeOrder="groupOID groupName">
+  <Entity id="Group" name="Group" duration="persistent" gr:x="700" gr:y="455" gr:hideAttributes="false" attributeOrder="groupOID groupName">
     <Attribute name="oid" id="groupOID" type="integer" key="true"/>
     <Attribute name="groupName" id="groupName" type="string"/>
   </Entity>
-  <Entity id="Module" name="Module" duration="persistent" gr:x="472" gr:y="167" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
+  <Entity id="Module" name="Module" duration="persistent" gr:x="880" gr:y="442" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
     <Attribute name="oid" id="moduleOID" type="integer" key="true"/>
     <Attribute name="moduleID" id="moduleID" type="string"/>
     <Attribute name="moduleName" id="moduleName" type="string"/>
@@ -18,7 +18,7 @@
     <RelationshipRole1 id="User2Group" name="groups" maxCard="N"/>
     <RelationshipRole2 id="Group2User" name="users" maxCard="N"/>
   </Relationship>
-  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44">
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="95,42,-91,42">
     <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1"/>
     <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N"/>
   </Relationship>
@@ -26,8 +26,78 @@
     <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1"/>
     <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N"/>
   </Relationship>
-  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41">
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="90,41,-94,41">
     <RelationshipRole1 id="Group2Module" name="modules" maxCard="N"/>
     <RelationshipRole2 id="Module2Group" name="groups" maxCard="N"/>
   </Relationship>
+  <Entity gr:x="343" gr:y="110" id="ent1" name="Material Did&#225;ctico" duration="persistent" attributeOrder="ent1#att1 ent1#att9 ent1#att10 ent1#att11 ent1#att12">
+    <Attribute id="ent1#att1" key="true" name="id" type="integer"/>
+    <Attribute id="ent1#att9" name="nome" type="string"/>
+    <Attribute id="ent1#att10" name="descri&#231;&#227;o" type="string"/>
+    <Attribute id="ent1#att11" name="nr_p&#225;ginas" type="integer"/>
+    <Attribute id="ent1#att12" name="custo" type="integer"/>
+  </Entity>
+  <Entity gr:x="30" gr:y="170" id="ent2" name="Lista de Material Did&#225;ctico" duration="persistent"/>
+  <Entity gr:x="70" gr:y="60" id="ent3" name="Ano lectivo" duration="persistent" attributeOrder="ent3#att3">
+    <Attribute id="ent3#att3" key="false" name="Ano" type="integer"/>
+  </Entity>
+  <Entity gr:x="-80" gr:y="280" id="ent4" name="Curso" duration="persistent" attributeOrder="ent4#att13">
+    <Attribute id="ent4#att13" name="Sigla" type="string" key="true"/>
+  </Entity>
+  <Entity gr:x="360" gr:y="10" id="ent5" name="Disciplina" duration="persistent" attributeOrder="ent5#att5">
+    <Attribute id="ent5#att5" key="false" name="nome" type="string"/>
+  </Entity>
+  <Entity gr:x="570" gr:y="110" id="ent6" name="Pedido de Impress&#227;o" duration="persistent" attributeOrder="ent6#att6 ent6#att14 ent6#att15 ent6#att16 ent6#att17">
+    <Attribute id="ent6#att6" key="true" name="id" type="integer"/>
+    <Attribute id="ent6#att14" name="cor" type="boolean"/>
+    <Attribute id="ent6#att15" name="nr_copias" type="integer"/>
+    <Attribute id="ent6#att16" name="pag_por_folha" type="integer"/>
+    <Attribute id="ent6#att17" name="frente_verso" type="boolean"/>
+  </Entity>
+  <Entity gr:x="810" gr:y="168" id="ent7" name="Lista de pedido de Impress&#227;o" duration="persistent"/>
+  <Entity gr:x="520" gr:y="340" id="ent8" name="Estudante" duration="persistent" attributeOrder="ent8#att20">
+    <Attribute id="ent8#att20" name="contacto" type="integer" key="false"/>
+    <Generalization superEntity="User"/>
+  </Entity>
+  <Relationship id="rel1" name="Material Did&#225;ctico_Lista de Material Did&#225;ctico" sourceEntity="ent1" targetEntity="ent2">
+    <RelationshipRole1 id="rel1#role1" name="Material Did&#225;cticoToLista de Material Did&#225;ctico" maxCard="N"/>
+    <RelationshipRole2 id="rel1#role2" name="Lista de Material Did&#225;cticoToMaterial Did&#225;ctico" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel2" name="Lista de Material Did&#225;ctico_Curso" sourceEntity="ent2" targetEntity="ent9">
+    <RelationshipRole1 id="rel2#role3" name="Lista de Material Did&#225;cticoToCurso" maxCard="N"/>
+    <RelationshipRole2 id="rel2#role4" name="CursoToLista de Material Did&#225;ctico" maxCard="N"/>
+  </Relationship>
+  <Relationship id="rel3" name="Disciplina_Material Did&#225;ctico" sourceEntity="ent5" targetEntity="ent1">
+    <RelationshipRole1 id="rel3#role5" name="DisciplinaToMaterial Did&#225;ctico" maxCard="1"/>
+    <RelationshipRole2 id="rel3#role6" name="Material Did&#225;cticoToDisciplina" maxCard="N"/>
+  </Relationship>
+  <Relationship id="rel4" name="Ano lectivo_Lista de Material Did&#225;ctico" sourceEntity="ent3" targetEntity="ent2">
+    <RelationshipRole1 id="rel4#role7" name="Ano lectivoToLista de Material Did&#225;ctico" maxCard="1"/>
+    <RelationshipRole2 id="rel4#role8" name="Lista de Material Did&#225;cticoToAno lectivo" maxCard="N"/>
+  </Relationship>
+  <Relationship id="rel5" name="Material Did&#225;ctico_Curso" sourceEntity="ent1" targetEntity="ent9" gr:bendpoints="0,122,292,0">
+    <RelationshipRole1 id="rel5#role9" name="Material Did&#225;cticoToCurso" maxCard="N"/>
+    <RelationshipRole2 id="rel5#role10" name="CursoToMaterial Did&#225;ctico" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel6" name="Pedido de Impress&#227;o_Material Did&#225;ctico" sourceEntity="ent6" targetEntity="ent1">
+    <RelationshipRole1 id="rel6#role11" name="Pedido de Impress&#227;oToMaterial Did&#225;ctico" maxCard="N"/>
+    <RelationshipRole2 id="rel6#role12" name="Material Did&#225;cticoToPedido de Impress&#227;o" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel8" name="Pedido de Impress&#227;o_Lista de pedido de Impress&#227;o" sourceEntity="ent6" targetEntity="ent7">
+    <RelationshipRole1 id="rel8#role15" name="Pedido de Impress&#227;oToLista de pedido de Impress&#227;o" maxCard="N"/>
+    <RelationshipRole2 id="rel8#role16" name="Lista de pedido de Impress&#227;oToPedido de Impress&#227;o" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel9" name="Lista de pedido de Impress&#227;o_Estudante" sourceEntity="ent7" targetEntity="ent8" gr:bendpoints="0,180,325,0">
+    <RelationshipRole1 id="rel9#role17" name="Lista de pedido de Impress&#227;oToEstudante" maxCard="1"/>
+    <RelationshipRole2 id="rel9#role18" name="EstudanteToLista de pedido de Impress&#227;o" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel11" name="Estudante_Curso" sourceEntity="ent8" targetEntity="ent9" gr:bendpoints="-463,0,0,58">
+    <RelationshipRole1 id="rel11#role21" name="EstudanteToCurso" maxCard="N"/>
+    <RelationshipRole2 id="rel11#role22" name="CursoToEstudante" maxCard="1"/>
+  </Relationship>
+  <Entity gr:x="58" gr:y="270" id="ent9" name="AnoCurso" duration="persistent" attributeOrder="ent9#att2 ent9#att7">
+    <Attribute id="ent9#att2" key="true" name="oid" type="integer"/>
+    <Attribute id="ent9#att7" name="anoCurso" type="integer" key="false"/>
+    <Generalization superEntity="ent4"/>
+  </Entity>
 </DataModel>
