@@ -47,15 +47,14 @@
   <Entity gr:x="360" gr:y="10" id="ent5" name="Disciplina" duration="persistent" attributeOrder="ent5#att5">
     <Attribute id="ent5#att5" key="false" name="nome" type="string"/>
   </Entity>
-  <Entity gr:x="570" gr:y="100" id="ent6" name="Pedido de Impress&#227;o" duration="persistent" attributeOrder="ent6#att6 ent6#att14 ent6#att15 ent6#att16 ent6#att17 ent6#att4">
+  <Entity gr:x="570" gr:y="110" id="ent6" name="Pedido de Impress&#227;o" duration="persistent" attributeOrder="ent6#att6 ent6#att14 ent6#att15 ent6#att16 ent6#att17">
     <Attribute id="ent6#att6" key="true" name="id" type="integer"/>
-    <Attribute id="ent6#att14" name="cor" type="boolean" key="false"/>
-    <Attribute id="ent6#att15" name="nr_copias" type="integer" key="false"/>
-    <Attribute id="ent6#att16" name="pag_por_folha" type="integer" key="false"/>
-    <Attribute id="ent6#att17" name="frente_verso" type="boolean" key="false"/>
-    <Attribute id="ent6#att4" name="concluido" type="boolean" key="false"/>
+    <Attribute id="ent6#att14" name="cor" type="boolean"/>
+    <Attribute id="ent6#att15" name="nr_copias" type="integer"/>
+    <Attribute id="ent6#att16" name="pag_por_folha" type="integer"/>
+    <Attribute id="ent6#att17" name="frente_verso" type="boolean"/>
   </Entity>
-  <Entity gr:x="810" gr:y="170" id="ent7" name="Lista de pedido de Impress&#227;o" duration="persistent"/>
+  <Entity gr:x="810" gr:y="168" id="ent7" name="Lista de pedido de Impress&#227;o" duration="persistent"/>
   <Entity gr:x="520" gr:y="340" id="ent8" name="Estudante" duration="persistent" attributeOrder="ent8#att20">
     <Attribute id="ent8#att20" name="contacto" type="integer" key="false"/>
     <Generalization superEntity="User"/>
