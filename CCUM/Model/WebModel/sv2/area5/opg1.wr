@@ -1,0 +1,33 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="28" gr:y="867" id="sv2#area5#opg1" name="Modifca&#231;&#227;o de Lista" transaction="true">
+  <OperationUnits>
+    <ModifyUnit gr:x="120" gr:y="0" id="sv2#area5#opg1#mfu4" name="Modificar Lista" entity="ent2">
+      <Selector id="sv2#area5#opg1#mfu4#su35" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg1#mfu4#su35#kcond29" name="KeyCondition29" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area5#opg1#mfu4#oln17" name="OKLink17" to="sv2#area5#opg1#rcnu1" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ReconnectUnit gr:x="300" gr:y="0" id="sv2#area5#opg1#rcnu1" name="Reconnect Lista Material2Ano Lectivo" relationship="rel4#role8">
+      <SourceSelector id="sv2#area5#opg1#rcnu1#su36" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg1#rcnu1#su36#kcond30" name="KeyCondition30" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#area5#opg1#rcnu1#su37" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg1#rcnu1#su37#kcond31" name="KeyCondition31" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#area5#opg1#rcnu1#oln18" name="OKLink18" to="sv2#area5#opg1#rcnu2" automaticCoupling="true"/>
+    </ReconnectUnit>
+    <ReconnectUnit gr:x="560" gr:y="0" id="sv2#area5#opg1#rcnu2" name="Reconnect Lista Material2Curso" relationship="rel2#role3">
+      <SourceSelector id="sv2#area5#opg1#rcnu2#su39" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg1#rcnu2#su39#kcond33" name="KeyCondition33" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#area5#opg1#rcnu2#su40" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg1#rcnu2#su40#kcond34" name="KeyCondition34" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#area5#opg1#rcnu2#oln38" name="OKLink38" to="sv2#area5#page7" automaticCoupling="true"/>
+    </ReconnectUnit>
+    <TimeUnit gr:x="0" gr:y="10" id="sv2#area5#opg1#tmu1" name="Get Time">
+      <OKLink id="sv2#area5#opg1#tmu1#oln4" name="OKLink4" to="sv2#area5#opg1#mfu4">
+        <LinkParameter id="sv2#area5#opg1#tmu1#oln4#par33" name="Current/Input Timestamp_dataActualizacao" source="currentTimestamp" target="sv2#area5#opg1#mfu4.ent2#att8"/>
+      </OKLink>
+    </TimeUnit>
+  </OperationUnits>
+</OperationGroup>

@@ -1,0 +1,18 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-124" gr:y="596" id="sv2#area5" name="Gest&#227;o de conte&#250;do" landmark="true" defaultPage="sv2#area5#page7" landmarks="sv2#area5#page9">
+  <OperationUnits>
+    <DeleteUnit gr:x="766" gr:y="576" id="sv2#area5#dlu2" name="EliminarMaterial" entity="ent1">
+      <Selector id="sv2#area5#dlu2#su26" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#dlu2#su26#kcond22" name="KeyCondition22" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area5#dlu2#oln15" name="OKLink15" to="sv2#area5#page8" automaticCoupling="true"/>
+      <KOLink id="sv2#area5#dlu2#kln4" name="KOLink4" to="sv2#area5#page8" automaticCoupling="true" gr:bendpoints="57,81,-273,30"/>
+    </DeleteUnit>
+    <DeleteUnit gr:x="406" gr:y="156" id="sv2#area5#dlu3" name="Eliminar Lista Material" entity="ent2">
+      <Selector id="sv2#area5#dlu3#su27" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#dlu3#su27#kcond23" name="KeyCondition23" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area5#dlu3#oln16" name="OKLink16" to="sv2#area5#page7" automaticCoupling="true"/>
+      <KOLink id="sv2#area5#dlu3#kln5" name="KOLink5" to="sv2#area5#page7" automaticCoupling="true" gr:bendpoints="86,6,-174,32"/>
+    </DeleteUnit>
+  </OperationUnits>
+</Area>

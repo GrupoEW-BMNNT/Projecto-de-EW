@@ -1,0 +1,11 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="6" gr:y="440" id="sv3#area14" name="Gest&#227;o Pedidos de Impress&#227;o" landmark="true" defaultPage="sv3#area14#page28">
+  <OperationUnits>
+    <DeleteUnit gr:x="266" gr:y="32" id="sv3#area14#dlu9" name="Eliminar Pedido" entity="ent6">
+      <Selector id="sv3#area14#dlu9#su66" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area14#dlu9#su66#kcond56" name="KeyCondition56" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#area14#dlu9#oln13" name="OKLink13" to="sv3#area14#page28" automaticCoupling="true" gr:bendpoints="-93,15,107,14"/>
+      <KOLink id="sv3#area14#dlu9#kln15" name="KOLink15" to="sv3#area14#page28" automaticCoupling="true" gr:bendpoints="-93,-15,107,-16"/>
+    </DeleteUnit>
+  </OperationUnits>
+</Area>

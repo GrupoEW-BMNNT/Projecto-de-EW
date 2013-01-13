@@ -1,0 +1,7 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Utilizador n&#227;o registado externo" protected="false" secure="false" localized="false" landmarks="sv1#area11 sv1#area10" homePage="sv1#area10#page22">
+  <OperationUnits>
+    <JumpUnit gr:x="770" gr:y="440" id="sv1#ju1" name="IrParaPesquisa" direction="forward" ignoreHistory="false" collectorUnit="sv4#pcu1">
+      <OKLink id="sv1#ju1#oln46" name="OKLink46" to="sv1#area10#page22" automaticCoupling="true" gr:bendpoints="133,12,-232,19"/>
+    </JumpUnit>
+  </OperationUnits>
+</SiteView>

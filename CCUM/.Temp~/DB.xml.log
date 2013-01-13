@@ -1,0 +1,113 @@
+[13 Jan 2013 18:05:19] Building database metadata model
+[13 Jan 2013 18:05:19] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@7290cb03, includeTables=true, username=tac, outputLogPath=/Users/tac/Dropbox/MEI/ACS/EW/CCUM/.Temp~/DB.xml.log, readIndexes=null, driverClass=org.postgresql.Driver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.PostgreSQLMetaDataProvider, outputPath=/Users/tac/Dropbox/MEI/ACS/EW/CCUM/.Temp~/DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=/Users/tac/Dropbox/MEI/ACS/EW/.metadata/.plugins/com.webratio.commons.db/derby, url=jdbc:postgresql://localhost:6666/DataBasePG, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=false, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=55310}
+[13 Jan 2013 18:05:19] URL: jdbc:postgresql://localhost:6666/DataBasePG
+[13 Jan 2013 18:05:19] Product name: PostgreSQL
+[13 Jan 2013 18:05:19] Product version: 9.2.1
+[13 Jan 2013 18:05:19] Driver name: PostgreSQL Native Driver
+[13 Jan 2013 18:05:19] Driver version: PostgreSQL 9.1 JDBC4 (build 901)
+[13 Jan 2013 18:05:19] Driver major version: 9
+[13 Jan 2013 18:05:19] Driver minor version: 1
+[13 Jan 2013 18:05:19] Identifier quote string: 1
+[13 Jan 2013 18:05:19] Retrieving schemas
+[13 Jan 2013 18:05:19]   Found schema: information_schema
+[13 Jan 2013 18:05:19]   Found schema: pg_catalog
+[13 Jan 2013 18:05:19]   Found schema: public
+[13 Jan 2013 18:05:19] Retrieving sequences
+[13 Jan 2013 18:05:19] Retrieving [TABLE, VIEW, SYNONYM] for schema 'information_schema'
+[13 Jan 2013 18:05:19] Retrieving [TABLE, VIEW, SYNONYM] for schema 'pg_catalog'
+[13 Jan 2013 18:05:19] Retrieving [TABLE, VIEW, SYNONYM] for schema 'public'
+[13 Jan 2013 18:05:19]   Found 'ano_lectivo' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'cursoano' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'disciplina' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'estudante' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'group' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'group_module' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'lista_de_material_didactico' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'material_didactico' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'module' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'pedido_de_impressao' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'user' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found 'user_group' [type = TABLE]
+[13 Jan 2013 18:05:19] Retrieving columns for 'ano_lectivo' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: anolectivo [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'ano_lectivo' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: anolectivo
+[13 Jan 2013 18:05:19] Retrieving columns for 'cursoano' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: ano [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: sigla [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'cursoano' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: oid
+[13 Jan 2013 18:05:19] Retrieving columns for 'disciplina' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: nome [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'disciplina' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: nome
+[13 Jan 2013 18:05:19] Retrieving columns for 'estudante' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: user_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: contacto [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: cursoano_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'estudante' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: user_oid
+[13 Jan 2013 18:05:19] Retrieving columns for 'group' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: groupname [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: module_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'group' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: oid
+[13 Jan 2013 18:05:19] Retrieving columns for 'group_module' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: group_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: module_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'group_module' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: group_oid
+[13 Jan 2013 18:05:19]   Found primary key column: module_oid
+[13 Jan 2013 18:05:19] Retrieving columns for 'lista_de_material_didactico' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: dataactualizacao [type = timestamp][SQL/XOPEN type = 93][size = 29][dec. digits = 6]
+[13 Jan 2013 18:05:19]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: cursoano_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: ano_lectivo_anolectivo [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'lista_de_material_didactico' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: oid
+[13 Jan 2013 18:05:19] Retrieving columns for 'material_didactico' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: nome [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: descricao [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: nr_paginas [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: custo [type = float8][SQL/XOPEN type = 8][size = 17][dec. digits = 17]
+[13 Jan 2013 18:05:19]   Found column: lista_de_material_didactico_oi [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: disciplina_nome [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: cursoano_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'material_didactico' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: oid
+[13 Jan 2013 18:05:19] Retrieving columns for 'module' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: moduleid [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: modulename [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'module' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: oid
+[13 Jan 2013 18:05:19] Retrieving columns for 'pedido_de_impressao' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: cor [type = bool][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: nr_copias [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: pag_por_folha [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: frente_verso [type = bool][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: concluido [type = bool][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: adicionado [type = timestamp][SQL/XOPEN type = 93][size = 29][dec. digits = 6]
+[13 Jan 2013 18:05:19]   Found column: material_didactico_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: estudante_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'pedido_de_impressao' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: oid
+[13 Jan 2013 18:05:19] Retrieving columns for 'user' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: username [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: password [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: email [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: group_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'user' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: oid
+[13 Jan 2013 18:05:19] Retrieving columns for 'user_group' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found column: user_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19]   Found column: group_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Jan 2013 18:05:19] Retrieving primary keys for 'user_group' [type = TABLE]
+[13 Jan 2013 18:05:19]   Found primary key column: user_oid
+[13 Jan 2013 18:05:19]   Found primary key column: group_oid
+[13 Jan 2013 18:05:20] Database connection closed

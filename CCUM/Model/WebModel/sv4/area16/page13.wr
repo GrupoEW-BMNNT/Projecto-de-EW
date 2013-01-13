@@ -1,0 +1,33 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area16#page13" name="Material Didatico" gr:x="30" gr:y="0">
+  <ContentUnits>
+    <DataUnit id="sv4#area16#page13#dau7" name="Material Did&#225;tico" gr:x="0" gr:y="0" entity="ent1" displayAttributes="ent1#att9 ent1#att10 ent1#att11 ent1#att12">
+      <Selector id="sv4#area16#page13#dau7#su60" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area16#page13#dau7#su60#kcond32" name="KeyCondition3" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area16#page13#dau7">
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Attribute attribute="ent1#att10"/>
+          <layout:Attribute attribute="ent1#att11"/>
+          <layout:Attribute attribute="ent1#att12"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

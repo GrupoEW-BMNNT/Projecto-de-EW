@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Warnings> 
+  <Warning xpath="id('sv1#ju1')" rootXPath="id('sv1')" error="false" label="IrParaPesquisa" key="NO_OUTGOING_KO_LINKS"> 
+    <Message>No outgoing KO link(s) for the operation unit 'IrParaPesquisa'</Message> 
+  </Warning>  
+  <Warning xpath="id('sv1#opg6#cnu1')" rootXPath="id('sv1')" error="false" label="Connect Estudante To Groups" key="NO_OUTGOING_KO_LINKS"> 
+    <Message>No outgoing KO link(s) for the operation unit 'Connect Estudante To Groups'</Message> 
+  </Warning>  
+  <Warning xpath="id('sv1#opg6#cnu2')" rootXPath="id('sv1')" error="false" label="Connect Estudante To Group" key="NO_OUTGOING_KO_LINKS"> 
+    <Message>No outgoing KO link(s) for the operation unit 'Connect Estudante To Group'</Message> 
+  </Warning>  
+  <Warning xpath="id('sv1#opg6#cnu3')" rootXPath="id('sv1')" error="false" label="Connect Estudante 2 Curso" key="NO_OUTGOING_KO_LINKS"> 
+    <Message>No outgoing KO link(s) for the operation unit 'Connect Estudante 2 Curso'</Message> 
+  </Warning>  
+  <Warning xpath="id('sv1#area11#lgu1')" rootXPath="id('sv1')" error="false" label="LoginToApplication" key="NO_OUTGOING_OK_LINKS"> 
+    <Message>No outgoing OK link(s) for the operation unit 'LoginToApplication'</Message> 
+  </Warning>  
+  <Warning xpath="id('sv1#area11#page24#enu11')" rootXPath="id('sv1')" key="MISSING_MANDATORY_OUTPUT_PARAMETER" label="Registo"> 
+    <Message>The mandatory output parameter 'Confirmar Password' is not transported along an outgoing link from the unit 'Registo'</Message> 
+  </Warning> 
+</Warnings>

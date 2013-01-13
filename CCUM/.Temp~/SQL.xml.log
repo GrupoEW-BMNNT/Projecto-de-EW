@@ -1,0 +1,25 @@
+[12 Jan 2013 14:38:55] DEBUG Executing SQL script
+[12 Jan 2013 14:38:55] INFO ================================================================================
+[12 Jan 2013 14:38:55] INFO outputPath= '/Users/tac/Dropbox/MEI/ACS/EW/CCUM/.Temp~/SQL.xml'
+[12 Jan 2013 14:38:55] INFO onError= 'abort'
+[12 Jan 2013 14:38:55] INFO statementSeparator= ';'
+[12 Jan 2013 14:38:55] INFO derby.system.home= '/Users/tac/Dropbox/MEI/ACS/EW/.metadata/.plugins/com.webratio.commons.db/derby'
+[12 Jan 2013 14:38:55] INFO password= 'manager'
+[12 Jan 2013 14:38:55] INFO url= 'jdbc:derby://localhost:23017/Dados;create=true'
+[12 Jan 2013 14:38:55] INFO username= 'manager'
+[12 Jan 2013 14:38:55] INFO autoCommit= 'false'
+[12 Jan 2013 14:38:55] INFO outputLogPath= '/Users/tac/Dropbox/MEI/ACS/EW/CCUM/.Temp~/SQL.xml.log'
+[12 Jan 2013 14:38:55] INFO driverClass= 'org.apache.derby.jdbc.ClientDriver'
+[12 Jan 2013 14:38:55] INFO encoding= ''
+[12 Jan 2013 14:38:55] INFO eventSocketPort= '50675'
+[12 Jan 2013 14:38:55] INFO sqlScript= '/Users/tac/Dropbox/MEI/ACS/EW/CCUM/DBScripts/Admin.sql'
+[12 Jan 2013 14:38:55] INFO ================================================================================
+[12 Jan 2013 14:38:55] INFO Connecting to the Database...
+[12 Jan 2013 14:38:55] INFO Database connection estabilished
+[12 Jan 2013 14:38:55] INFO transaction isolation: 2
+[12 Jan 2013 14:38:55] DEBUG ================================================================================
+[12 Jan 2013 14:38:55] DEBUG Executing SQL script file: /Users/tac/Dropbox/MEI/ACS/EW/CCUM/DBScripts/Admin.sql
+[12 Jan 2013 14:38:55] DEBUG ================================================================================
+[12 Jan 2013 14:38:55] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[12 Jan 2013 14:38:55] INFO Database connection closed
+[12 Jan 2013 14:38:55] DEBUG Total time: 659 milliseconds

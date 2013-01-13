@@ -1,0 +1,88 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="946" gr:y="486" id="sv2#area5#page8" name="Adicionar material &#224; lista de material">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv2#area5#page8#dau3" name="Lista de Material" entity="ent2" displayAttributes="rel2#role3.ent9#att13 rel2#role3.ent9#att7 rel4#role8.ent3#att3">
+      <Selector id="sv2#area5#page8#dau3#su10" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#page8#dau3#su10#kcond14" name="KeyCondition14" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area5#page8#dau3#ln20" name="Link20" to="sv2#area5#page8#inu3" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#area5#page8#dau3#ln43" name="Link27" to="sv2#area5#opg2#cnu8" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="487,-147,-297,-152"/>
+      <Link id="sv2#area5#page8#dau3#ln46" name="Link46" to="sv2#area5#page8#seu12" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#area5#page8#dau3#ln27" name="Link27" to="sv2#area5#opg2#mfu1" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="345,-30,-155,-53"/>
+    </DataUnit>
+    <IndexUnit gr:x="0" gr:y="120" id="sv2#area5#page8#inu3" name="Material Did&#225;tico" entity="ent1" linkOrder="sv2#area5#page8#inu3#ln28" displayAttributes="ent1#att9 ent1#att10 ent1#att11 ent1#att12">
+      <Selector id="sv2#area5#page8#inu3#su19" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area5#page8#inu3#su19#rcond1" name="RoleCondition1" predicate="in" implied="false" role="rel1#role2"/>
+      </Selector>
+      <Link id="sv2#area5#page8#inu3#ln28" name="Eliminar" to="sv2#area5#dlu2" automaticCoupling="true" type="normal" validate="true"/>
+      <SortAttribute attribute="ent1#att9" order="descending"/>
+    </IndexUnit>
+    <EntryUnit gr:x="180" gr:y="140" id="sv2#area5#page8#enu4" name="Novo Material Did&#225;tico" fieldOrder="sv2#area5#page8#enu4#fld5 sv2#area5#page8#enu4#fld6 sv2#area5#page8#enu4#fld7 sv2#area5#page8#enu4#fld8 sv2#area5#page8#enu4#sfld5" linkOrder="sv2#area5#page8#enu4#ln45">
+      <Field id="sv2#area5#page8#enu4#fld8" name="Custo" type="float" modifiable="true"/>
+      <Field id="sv2#area5#page8#enu4#fld7" name="N&#250;mero de P&#225;ginas" type="integer" modifiable="true"/>
+      <Field id="sv2#area5#page8#enu4#fld6" name="Descri&#231;&#227;o" type="string" modifiable="true"/>
+      <Field id="sv2#area5#page8#enu4#fld5" name="Nome" type="string" modifiable="true"/>
+      <SelectionField id="sv2#area5#page8#enu4#sfld5" name="Disciplina" type="string" modifiable="true"/>
+      <Link id="sv2#area5#page8#enu4#ln42" name="Link25" to="sv2#area5#opg2#cnu7" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page8#enu4#ln42#par63" name="Disciplina_KeyCondition19 [nome] [Disciplina] [Target]" source="sv2#area5#page8#enu4#sfld5" target="sv2#area5#opg2#cnu7#su42#kcond36.ent5#att5"/>
+      </Link>
+      <Link id="sv2#area5#page8#enu4#ln45" name="Adicionar" to="sv2#area5#opg2#cru4" type="normal" validate="true">
+        <LinkParameter id="sv2#area5#page8#enu4#ln45#par66" name="Custo_custo" source="sv2#area5#page8#enu4#fld8" target="sv2#area5#opg2#cru4.ent1#att12"/>
+        <LinkParameter id="sv2#area5#page8#enu4#ln45#par67" name="Descri&#231;&#227;o_descri&#231;&#227;o" source="sv2#area5#page8#enu4#fld6" target="sv2#area5#opg2#cru4.ent1#att10"/>
+        <LinkParameter id="sv2#area5#page8#enu4#ln45#par68" name="Nome_nome" source="sv2#area5#page8#enu4#fld5" target="sv2#area5#opg2#cru4.ent1#att9"/>
+        <LinkParameter id="sv2#area5#page8#enu4#ln45#par69" name="N&#250;mero de P&#225;ginas_nr_p&#225;ginas" source="sv2#area5#page8#enu4#fld7" target="sv2#area5#opg2#cru4.ent1#att11"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="204" gr:y="264" id="sv2#area5#page8#seu6" name="Disciplinas" entity="ent5">
+      <Link id="sv2#area5#page8#seu6#ln23" name="Link23" to="sv2#area5#page8#enu4" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page8#seu6#ln23#par46" name="nome_Disciplina [label]" source="ent5#att5Array" target="sv2#area5#page8#enu4#sfld5_label"/>
+        <LinkParameter id="sv2#area5#page8#seu6#ln23#par47" name="nome_Disciplina [output]" source="ent5#att5Array" target="sv2#area5#page8#enu4#sfld5_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="222" gr:y="32" id="sv2#area5#page8#seu12" name="Curso" entity="ent9">
+      <Selector id="sv2#area5#page8#seu12#su47" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area5#page8#seu12#su47#rcond7" name="RoleCondition7" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+      <Link id="sv2#area5#page8#seu12#ln47" name="Link47" to="sv2#area5#opg2#cnu9" type="transport" validate="true" automaticCoupling="true"/>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area5#page8#dau3">
+          <layout:Attribute attribute="rel2#role3.ent9#att13"/>
+          <layout:Attribute attribute="rel2#role3.ent9#att7"/>
+          <layout:Attribute attribute="rel4#role8.ent3#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area5#page8#inu3">
+          <layout:Link link="sv2#area5#page8#inu3#ln28"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Attribute attribute="ent1#att10"/>
+          <layout:Attribute attribute="ent1#att11"/>
+          <layout:Attribute attribute="ent1#att12"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area5#page8#enu4">
+          <layout:Link link="sv2#area5#page8#enu4#ln45"/>
+          <layout:Field field="sv2#area5#page8#enu4#fld5"/>
+          <layout:Field field="sv2#area5#page8#enu4#fld6"/>
+          <layout:Field field="sv2#area5#page8#enu4#fld7"/>
+          <layout:Field field="sv2#area5#page8#enu4#fld8"/>
+          <layout:Field field="sv2#area5#page8#enu4#sfld5"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

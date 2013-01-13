@@ -1,0 +1,69 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="651" gr:y="0" id="sv2#area5#page7" name="Listas de Material">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="130" id="sv2#area5#page7#inu1" name="Listas de Material" entity="ent2" displayAttributes="rel2#role3.ent9#att13 rel2#role3.ent9#att7 rel4#role8.ent3#att3" linkOrder="sv2#area5#page7#inu1#ln29 sv2#area5#page7#inu1#ln30">
+      <Link id="sv2#area5#page7#inu1#ln29" name="Remover" to="sv2#area5#dlu3" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area5#page7#inu1#ln30" name="Detalhes" to="sv2#area5#page8#dau3" automaticCoupling="true" type="normal" validate="true"/>
+      <SortAttribute attribute="ent2#att8" order="descending"/>
+    </IndexUnit>
+    <EntryUnit gr:x="135" gr:y="136" id="sv2#area5#page7#enu3" name="Nova Lista de Material" fieldOrder="sv2#area5#page7#enu3#sfld2 sv2#area5#page7#enu3#sfld3" linkOrder="sv2#area5#page7#enu3#ln49">
+      <SelectionField id="sv2#area5#page7#enu3#sfld3" name="Curso" type="string" modifiable="true" slotOrder="sv2#area5#page7#enu3#sfld3#slot9 sv2#area5#page7#enu3#sfld3#slot10 sv2#area5#page7#enu3#sfld3#slot11 sv2#area5#page7#enu3#sfld3#slot12">
+        <Slot id="sv2#area5#page7#enu3#sfld3#slot12" name="oid" output="true"/>
+        <Slot id="sv2#area5#page7#enu3#sfld3#slot11" name="Ano" label="true"/>
+        <Slot id="sv2#area5#page7#enu3#sfld3#slot10" name="Slot10" value="-" label="true"/>
+        <Slot id="sv2#area5#page7#enu3#sfld3#slot9" name="Sigla" label="true"/>
+      </SelectionField>
+      <SelectionField id="sv2#area5#page7#enu3#sfld2" name="Ano Lectivo" type="string" modifiable="true"/>
+      <Link id="sv2#area5#page7#enu3#ln48" name="Adicionar" to="sv2#area5#opg3#cnu10" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page7#enu3#ln48#par93" name="Curso_KeyCondition6 [oid] [CursoAno] [Target]" source="sv2#area5#page7#enu3#sfld3" target="sv2#area5#opg3#cnu10#su49#kcond42.ent9#att19"/>
+      </Link>
+      <Link id="sv2#area5#page7#enu3#ln49" name="Adicionar" to="sv2#area5#opg3#tmu2" type="normal" validate="true"/>
+      <Link id="sv2#area5#page7#enu3#ln50" name="Link19" to="sv2#area5#opg3#cnu11" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page7#enu3#ln50#par73" name="Ano Lectivo_KeyCondition13 [Ano] [Ano lectivo] [Target]" source="sv2#area5#page7#enu3#sfld2" target="sv2#area5#opg3#cnu11#su51#kcond44.ent3#att3"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="99" gr:y="0" id="sv2#area5#page7#seu1" name="Cursos" entity="ent9">
+      <Link id="sv2#area5#page7#seu1#ln2" name="Link2" to="sv2#area5#page7#enu3" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page7#seu1#ln2#par65" name="Ano_Curso[Ano]" source="ent9#att7Array" target="sv2#area5#page7#enu3#sfld3#slot11"/>
+        <LinkParameter id="sv2#area5#page7#seu1#ln2#par77" name="oid_Curso[oid]" source="ent9#att19Array" target="sv2#area5#page7#enu3#sfld3#slot12"/>
+        <LinkParameter id="sv2#area5#page7#seu1#ln2#par86" name="Sigla_Curso[Sigla]" source="ent9#att13Array" target="sv2#area5#page7#enu3#sfld3#slot9"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="195" gr:y="256" id="sv2#area5#page7#seu2" name="Anos Lectivos" entity="ent3">
+      <Link id="sv2#area5#page7#seu2#ln7" name="Link7" to="sv2#area5#page7#enu3" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page7#seu2#ln7#par16" name="Ano_Ano Lectivo [label]" source="ent3#att3Array" target="sv2#area5#page7#enu3#sfld2_label"/>
+        <LinkParameter id="sv2#area5#page7#seu2#ln7#par18" name="Ano_Ano Lectivo [output]" source="ent3#att3Array" target="sv2#area5#page7#enu3#sfld2_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area5#page7#inu1">
+          <layout:Link link="sv2#area5#page7#inu1#ln29"/>
+          <layout:Link link="sv2#area5#page7#inu1#ln30"/>
+          <layout:Attribute attribute="rel2#role3.ent9#att13"/>
+          <layout:Attribute attribute="rel2#role3.ent9#att7"/>
+          <layout:Attribute attribute="rel4#role8.ent3#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area5#page7#enu3">
+          <layout:Link link="sv2#area5#page7#enu3#ln49"/>
+          <layout:Field field="sv2#area5#page7#enu3#sfld2"/>
+          <layout:Field field="sv2#area5#page7#enu3#sfld3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,62 @@
+[13 Jan 2013 18:05:18] DEBUG Executing SQL script
+[13 Jan 2013 18:05:18] INFO ================================================================================
+[13 Jan 2013 18:05:18] INFO outputPath= '/Users/tac/Dropbox/MEI/ACS/EW/CCUM/.Temp~/UpdateSQL.xml'
+[13 Jan 2013 18:05:18] INFO onError= 'continue'
+[13 Jan 2013 18:05:18] INFO statementSeparator= ';'
+[13 Jan 2013 18:05:18] INFO derby.system.home= '/Users/tac/Dropbox/MEI/ACS/EW/.metadata/.plugins/com.webratio.commons.db/derby'
+[13 Jan 2013 18:05:18] INFO password= ''
+[13 Jan 2013 18:05:18] INFO url= 'jdbc:postgresql://localhost:6666/DataBasePG'
+[13 Jan 2013 18:05:18] INFO username= 'tac'
+[13 Jan 2013 18:05:18] INFO autoCommit= 'false'
+[13 Jan 2013 18:05:18] INFO outputLogPath= '/Users/tac/Dropbox/MEI/ACS/EW/CCUM/.Temp~/UpdateSQL.xml.log'
+[13 Jan 2013 18:05:18] INFO driverClass= 'org.postgresql.Driver'
+[13 Jan 2013 18:05:18] INFO encoding= ''
+[13 Jan 2013 18:05:18] INFO eventSocketPort= '55305'
+[13 Jan 2013 18:05:18] INFO sqlScript= '/Users/tac/Dropbox/MEI/ACS/EW/CCUM/.Temp~/UpdateSQL.sql'
+[13 Jan 2013 18:05:18] INFO ================================================================================
+[13 Jan 2013 18:05:18] INFO Connecting to the Database...
+[13 Jan 2013 18:05:18] INFO Database connection estabilished
+[13 Jan 2013 18:05:18] INFO transaction isolation: 2
+[13 Jan 2013 18:05:18] DEBUG ================================================================================
+[13 Jan 2013 18:05:18] DEBUG Executing SQL script file: /Users/tac/Dropbox/MEI/ACS/EW/CCUM/.Temp~/UpdateSQL.sql
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  create table "public"."group" ( "oid"  int4  not null, "groupname"  varchar(255), primary key ("oid") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."module" ( "oid"  int4  not null, "moduleid"  varchar(255), "modulename"  varchar(255), primary key ("oid") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."user" ( "oid"  int4  not null, "username"  varchar(255), "password"  varchar(255), "email"  varchar(255), primary key ("oid") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."material_didactico" ( "oid"  int4  not null, "nome"  varchar(255), "descricao"  varchar(255), "nr_paginas"  int4, "custo"  float8, primary key ("oid") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."lista_de_material_didactico" ( "dataactualizacao"  timestamp, "oid"  int4  not null, primary key ("oid") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."ano_lectivo" ( "anolectivo"  varchar(255)  not null, primary key ("anolectivo") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."estudante" ( "user_oid"  int4  not null, "contacto"  varchar(255), primary key ("user_oid") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."disciplina" ( "nome"  varchar(255)  not null, primary key ("nome") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."pedido_de_impressao" ( "oid"  int4  not null, "cor"  bool, "nr_copias"  int4, "pag_por_folha"  int4, "frente_verso"  bool, "concluido"  bool, "adicionado"  timestamp, primary key ("oid") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."cursoano" ( "ano"  int4, "sigla"  varchar(255), "oid"  int4  not null, primary key ("oid") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."group"  add column  "module_oid"  int4
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."group"   add constraint fk_group_module foreign key ("module_oid") references "public"."module" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."group_module" ( "group_oid"  int4 not null, "module_oid"  int4 not null, primary key ("group_oid", "module_oid") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."group_module"   add constraint fk_group_module_group foreign key ("group_oid") references "public"."group" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."group_module"   add constraint fk_group_module_module foreign key ("module_oid") references "public"."module" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."user"  add column  "group_oid"  int4
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."user"   add constraint fk_user_group foreign key ("group_oid") references "public"."group" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    create table "public"."user_group" ( "user_oid"  int4 not null, "group_oid"  int4 not null, primary key ("user_oid", "group_oid") )
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."user_group"   add constraint fk_user_group_user foreign key ("user_oid") references "public"."user" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."user_group"   add constraint fk_user_group_group foreign key ("group_oid") references "public"."group" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."material_didactico"  add column  "lista_de_material_didactico_oi"  int4
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."material_didactico"   add constraint fk_material_didactico_lista_de foreign key ("lista_de_material_didactico_oi") references "public"."lista_de_material_didactico" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."estudante"  add column  "cursoano_oid"  int4
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."estudante"   add constraint fk_estudante_cursoano foreign key ("cursoano_oid") references "public"."cursoano" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."lista_de_material_didactico"  add column  "cursoano_oid"  int4
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."lista_de_material_didactico"   add constraint fk_lista_de_material_didacti_2 foreign key ("cursoano_oid") references "public"."cursoano" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."material_didactico"  add column  "disciplina_nome"  varchar(255)
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."material_didactico"   add constraint fk_material_didactico_discipli foreign key ("disciplina_nome") references "public"."disciplina" ("nome")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."lista_de_material_didactico"  add column  "ano_lectivo_anolectivo"  varchar(255)
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."lista_de_material_didactico"   add constraint fk_lista_de_material_didactico foreign key ("ano_lectivo_anolectivo") references "public"."ano_lectivo" ("anolectivo")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."material_didactico"  add column  "cursoano_oid"  int4
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."material_didactico"   add constraint fk_material_didactico_cursoano foreign key ("cursoano_oid") references "public"."cursoano" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."pedido_de_impressao"  add column  "material_didactico_oid"  int4
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."pedido_de_impressao"   add constraint fk_pedido_de_impressao_materia foreign key ("material_didactico_oid") references "public"."material_didactico" ("oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."pedido_de_impressao"  add column  "estudante_oid"  int4
+[13 Jan 2013 18:05:18] DEBUG Executing statement:  alter table "public"."pedido_de_impressao"   add constraint fk_pedido_de_impressao_estudan foreign key ("estudante_oid") references "public"."estudante" ("user_oid")
+[13 Jan 2013 18:05:18] DEBUG Executing statement:    alter table "public"."estudante"   add constraint fk_estudante_user foreign key ("user_oid") references "public"."user" ("oid")
+[13 Jan 2013 18:05:18] DEBUG ================================================================================
+[13 Jan 2013 18:05:18] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[13 Jan 2013 18:05:18] INFO Database connection closed
+[13 Jan 2013 18:05:18] DEBUG Total time: 359 milliseconds

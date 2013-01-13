@@ -1,0 +1,50 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area3#page5" name="Pesquisar material" landmark="true" gr:x="30" gr:y="0" linkOrder="sv4#area3#page5#ln97">
+  <ContentUnits>
+    <EntryUnit id="sv4#area3#page5#enu1" name="Introduza a Disciplina" linkOrder="sv4#area3#page5#enu1#ln62" gr:x="10" gr:y="0" fieldOrder="sv4#area3#page5#enu1#fld1">
+      <Field id="sv4#area3#page5#enu1#fld1" name="Disciplina" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv4#area3#page5#enu1#fld1#mnd7" name="Required" errorMessage="O nome da Disciplina &#233; necess&#225;rio!"/>
+        </VRules>
+      </Field>
+      <Link id="sv4#area3#page5#enu1#ln62" name="Pesquisar" to="sv4#area3#page5#inu16" type="normal" validate="true">
+        <LinkParameter id="sv4#area3#page5#enu1#ln62#par128" name="Disciplina_Condi&#231;&#227;o" source="sv4#area3#page5#enu1#fld1" target="sv4#area3#page5#inu16#su38#acond8"/>
+      </Link>
+    </EntryUnit>
+    <IndexUnit id="sv4#area3#page5#inu16" name="Material da Disciplina" gr:x="0" gr:y="90" entity="ent1" displayAttributes="ent1#att9 rel3#role6.ent5#att5" linkOrder="sv4#area3#page5#inu16#ln81">
+      <SortAttribute attribute="ent1#att12" order="descending"/>
+      <Selector id="sv4#area3#page5#inu16#su38" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area3#page5#inu16#su38#acond8" name="Condi&#231;&#227;o" predicate="contains" booleanOperator="and" implied="false" attributes="rel3#role6.ent5#att5" ignoreCase="true"/>
+      </Selector>
+      <Link id="sv4#area3#page5#inu16#ln81" name="Detalhes" to="sv4#area16#page13#dau7" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area3#page5#enu1">
+          <layout:Field field="sv4#area3#page5#enu1#fld1"/>
+          <layout:Link link="sv4#area3#page5#enu1#ln62"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area3#page5#inu16">
+          <layout:Link link="sv4#area3#page5#inu16#ln81"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Attribute attribute="rel3#role6.ent5#att5"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv4#area3#page5#ln97" name="Concluir Pesquisa" to="sv4#ju4" automaticCoupling="true" type="normal" validate="true"/>
+</Page>

@@ -1,0 +1,15 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-258" gr:y="60" id="sv2#area4" name="Gest&#227;o grupos e utilizadores" landmark="true" defaultPage="sv2#area4#page6" landmarks="sv2#area4#page14">
+  <OperationUnits>
+    <DeleteUnit id="sv2#area4#dlu7" name="Eliminar Grupo" gr:x="538" gr:y="266" entity="Group">
+      <Selector id="sv2#area4#dlu7#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area4#dlu7#su2#kcond2" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area4#dlu7#oln3" name="OKLink1" to="sv2#area4#page6" automaticCoupling="true"/>
+    </DeleteUnit>
+    <DeleteUnit gr:x="378" gr:y="286" id="sv2#area4#dlu8" name="Eliminar Utilizador" entity="User">
+      <Selector id="sv2#area4#dlu8#su3" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area4#dlu8#su3#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+  </OperationUnits>
+</Area>

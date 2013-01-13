@@ -1,0 +1,36 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1150" gr:y="110" id="sv2#opg4" name="Adicionar grupo de utilizadores" transaction="true">
+  <OperationUnits>
+    <ModifyUnit id="sv2#opg4#mfu5" name="Modificar Grupo" gr:x="0" gr:y="220" entity="Group">
+      <Selector id="sv2#opg4#mfu5#su52" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#opg4#mfu5#su52#kcond45" name="KeyCondition8" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#opg4#mfu5#oln27" name="OKLink5" to="sv2#opg4#dcnu3">
+        <LinkParameter id="sv2#opg4#mfu5#oln27#par17" name="oid_KeyCondition11 [oid] [Group] [Source]" source="groupOIDArray" target="sv2#opg4#dcnu3#su55#kcond48.groupOID"/>
+        <LinkParameter id="sv2#opg4#mfu5#oln27#par36" name="Select Protected Modules_PASSING_RoleCondition5 [oid] [Group] [Target]" sourceLinkParameter="sv2#inn1#oln31#par35" target="sv2#opg4#dcnu3#su56#rcond8.groupOID"/>
+      </OKLink>
+    </ModifyUnit>
+    <CreateUnit id="sv2#opg4#cru6" name="Criar Grupo" gr:x="0" gr:y="80" entity="Group">
+      <OKLink id="sv2#opg4#cru6#oln28" name="OKLink3" to="sv2#opg4#cnu12" automaticCoupling="true"/>
+    </CreateUnit>
+    <ConnectUnit id="sv2#opg4#cnu12" name="Connect Protected Module" gr:x="160" gr:y="0" relationship="Group2Module">
+      <SourceSelector id="sv2#opg4#cnu12#su53" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#opg4#cnu12#su53#kcond46" name="KeyCondition9" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#opg4#cnu12#su54" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#opg4#cnu12#su54#kcond47" name="KeyCondition10" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#opg4#cnu12#oln29" name="OKLink4" to="sv2#area4" automaticCoupling="true" gr:bendpoints="-306,-47,412,-145"/>
+    </ConnectUnit>
+    <DisconnectUnit id="sv2#opg4#dcnu3" name="Disconnect Protected Modules" gr:x="180" gr:y="260" relationship="Group2Module">
+      <SourceSelector id="sv2#opg4#dcnu3#su55" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#opg4#dcnu3#su55#kcond48" name="KeyCondition11" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#opg4#dcnu3#su56" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#opg4#dcnu3#su56#rcond8" name="RoleCondition5" predicate="in" implied="false" role="Group2Module"/>
+      </TargetSelector>
+      <OKLink id="sv2#opg4#dcnu3#oln30" name="OKLink6" to="sv2#opg4#cnu12">
+        <LinkParameter id="sv2#opg4#dcnu3#oln30#par22" name="Source oid [Group]_KeyCondition9 [oid] [Group] [Source]" source="sourcegroupOID" target="sv2#opg4#cnu12#su53#kcond46.groupOID"/>
+      </OKLink>
+    </DisconnectUnit>
+  </OperationUnits>
+</OperationGroup>
