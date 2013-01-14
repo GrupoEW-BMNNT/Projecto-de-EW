@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="436" gr:y="196" id="sv3#area18#page27" name="Adicionar pedido impress&#227;o">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="406" gr:y="176" id="sv3#area18#page27" name="Adicionar pedido impress&#227;o">
   <ContentUnits>
-    <EntryUnit gr:x="90" gr:y="0" id="sv3#area18#page27#enu14" name="Pedido de impress&#227;o" fieldOrder="sv3#area18#page27#enu14#fld2 sv3#area18#page27#enu14#fld17 sv3#area18#page27#enu14#fld29 sv3#area18#page27#enu14#fld30" linkOrder="sv3#area18#page27#enu14#ln102">
+    <EntryUnit gr:x="120" gr:y="20" id="sv3#area18#page27#enu14" name="Pedido de impress&#227;o" fieldOrder="sv3#area18#page27#enu14#fld2 sv3#area18#page27#enu14#fld17 sv3#area18#page27#enu14#fld29 sv3#area18#page27#enu14#fld30" linkOrder="sv3#area18#page27#enu14#ln102">
       <Field id="sv3#area18#page27#enu14#fld2" type="integer" modifiable="true" name="N&#250;mero de c&#243;pias"/>
       <Field id="sv3#area18#page27#enu14#fld30" name="Frente e verso" type="string" modifiable="true">
         <VRules>
@@ -19,6 +19,9 @@
         <LinkParameter id="sv3#area18#page27#enu14#ln104#par39" name="Frente e verso_frente_verso" source="sv3#area18#page27#enu14#fld30" target="sv3#area18#opg9#cru10.ent6#att17"/>
         <LinkParameter id="sv3#area18#page27#enu14#ln104#par40" name="N&#250;mero de c&#243;pias_nr_copias" source="sv3#area18#page27#enu14#fld2" target="sv3#area18#opg9#cru10.ent6#att15"/>
         <LinkParameter id="sv3#area18#page27#enu14#ln104#par41" name="P&#225;ginas por folha_pag_por_folha" source="sv3#area18#page27#enu14#fld29" target="sv3#area18#opg9#cru10.ent6#att16"/>
+      </Link>
+      <Link id="sv3#area18#page27#enu14#ln33" name="Link33" to="sv3#area18#opg9#cnu15" type="transport" validate="true">
+        <LinkParameter id="sv3#area18#page27#enu14#ln33#par13" name="oid_PASSING_KeyCondition21 [oid] [Material Did&#225;ctico] [Target]" sourceLinkParameter="sv3#area18#page19#dau4#ln59#par5" target="sv3#area18#opg9#cnu15#su80#kcond59.ent1#att1"/>
       </Link>
     </EntryUnit>
     <GetUnit gr:x="0" gr:y="0" id="sv3#area18#page27#gtu13" name="Get User" contextParameters="UserCtxParam">

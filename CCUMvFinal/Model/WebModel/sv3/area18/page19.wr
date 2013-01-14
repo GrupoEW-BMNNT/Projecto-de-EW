@@ -4,8 +4,9 @@
       <Selector id="sv3#area18#page19#dau4#su15" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#area18#page19#dau4#su15#kcond11" name="KeyCondition3" predicate="in" implied="false"/>
       </Selector>
-      <Link id="sv3#area18#page19#dau4#ln59" name="Adicionar pedido impress&#227;o" to="sv3#area18#page27#enu14" type="normal" validate="true"/>
-      <Link id="sv3#area18#page19#dau4#ln103" name="Link83" to="sv3#area18#opg9#cnu15" type="transport" automaticCoupling="true" validate="true"/>
+      <Link id="sv3#area18#page19#dau4#ln59" name="Adicionar pedido impress&#227;o" to="sv3#area18#page27#enu14" type="normal" validate="true">
+        <LinkParameter id="sv3#area18#page19#dau4#ln59#par5" name="oid_PASSING" source="data.ent1#att1" passing="true"/>
+      </Link>
     </DataUnit>
   </ContentUnits>
   <layout:Grid>
