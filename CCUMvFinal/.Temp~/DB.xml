@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DBMetaData driverMajorVersion="9" driverMinorVersion="1" driverVersion="PostgreSQL 9.1 JDBC4 (build 901)" productVersion="9.2.1" identifierQuoteString="&quot;" transactionLevel="Read Committed" driverName="PostgreSQL Native Driver" productName="PostgreSQL">
+  <Schema name="information_schema"/>
+  <Schema name="pg_catalog"/>
+  <Schema name="public"/>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="ano_lectivo" refreshed="true">
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="anolectivo" primaryKey="true" notNull="true"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="cursoano" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="ano" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="sigla" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="disciplina" refreshed="true">
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="nome" primaryKey="true" notNull="true"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="estudante" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="user_oid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="contacto" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="cursoano_oid" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="group" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="groupname" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="module_oid" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="group_module" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="group_oid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="module_oid" primaryKey="true" notNull="true"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="lista_de_material_didactico" refreshed="true">
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="timestamp" size="29" decimalDigits="6" name="dataactualizacao" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="cursoano_oid" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="ano_lectivo_anolectivo" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="material_didactico" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="nome" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="descricao" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="nr_paginas" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="float8" size="17" decimalDigits="17" name="custo" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="lista_de_material_didactico_oi" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="disciplina_nome" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="cursoano_oid" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="module" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="moduleid" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="modulename" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="pedido_de_impressao" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="-7" indexed="unknown" autoIncrement="false" type="bool" size="1" decimalDigits="0" name="cor" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="nr_copias" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="pag_por_folha" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="-7" indexed="unknown" autoIncrement="false" type="bool" size="1" decimalDigits="0" name="frente_verso" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="-7" indexed="unknown" autoIncrement="false" type="bool" size="1" decimalDigits="0" name="concluido" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="timestamp" size="29" decimalDigits="6" name="adicionado" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="material_didactico_oid" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="estudante_oid" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="user" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="username" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="password" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="email" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="group_oid" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table type="TABLE" schema="public" ignoreIndexes="false" name="user_group" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="user_oid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="group_oid" primaryKey="true" notNull="true"/>
+  </Table>
+</DBMetaData>

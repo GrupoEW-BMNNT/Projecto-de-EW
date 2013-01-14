@@ -1,0 +1,15 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="420" gr:y="1740" id="sv2#area7" name="Gest&#227;o Disciplinas" landmark="true" defaultPage="sv2#area7#page11">
+  <OperationUnits>
+    <DeleteUnit gr:x="0" gr:y="20" id="sv2#area7#dlu5" name="Eliminar Disciplina" entity="ent5">
+      <Selector id="sv2#area7#dlu5#su58" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area7#dlu5#su58#kcond50" name="KeyCondition50" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area7#dlu5#oln34" name="OKLink34" to="sv2#area7#page11" automaticCoupling="true" gr:bendpoints="90,-15,-154,-18"/>
+      <KOLink id="sv2#area7#dlu5#kln10" name="KOLink10" to="sv2#area7#page11" automaticCoupling="true" gr:bendpoints="86,36,-158,33"/>
+    </DeleteUnit>
+    <CreateUnit gr:x="500" gr:y="30" id="sv2#area7#cru8" name="Nova Disciplina" entity="ent5">
+      <OKLink id="sv2#area7#cru8#oln35" name="OKLink35" to="sv2#area7#page11" automaticCoupling="true" gr:bendpoints="-87,-13,160,-10"/>
+      <KOLink id="sv2#area7#cru8#kln9" name="KOLink9" to="sv2#area7#page11" automaticCoupling="true" gr:bendpoints="-90,36,157,39"/>
+    </CreateUnit>
+  </OperationUnits>
+</Area>

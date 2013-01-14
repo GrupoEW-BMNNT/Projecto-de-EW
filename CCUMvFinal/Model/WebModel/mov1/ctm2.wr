@@ -1,0 +1,53 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="100" gr:y="150" id="mov1#ctm2" name="Pesquisar listas">
+  <ContentUnits>
+    <EntryUnit id="mov1#ctm2#enu17" name="Curso" linkOrder="mov1#ctm2#enu17#ln62" gr:x="20" gr:y="120" fieldOrder="mov1#ctm2#enu17#sfld4">
+      <SelectionField id="mov1#ctm2#enu17#sfld4" name="Curso" type="string" modifiable="true" slotOrder="mov1#ctm2#enu17#sfld4#slot21 mov1#ctm2#enu17#sfld4#slot22 mov1#ctm2#enu17#sfld4#slot23 mov1#ctm2#enu17#sfld4#slot24">
+        <Slot id="mov1#ctm2#enu17#sfld4#slot21" name="Sigla" label="true" output="true"/>
+        <Slot id="mov1#ctm2#enu17#sfld4#slot22" name="Slot18" value="-" label="true"/>
+        <Slot id="mov1#ctm2#enu17#sfld4#slot23" name="Ano" label="true"/>
+        <Slot id="mov1#ctm2#enu17#sfld4#slot24" name="oid"/>
+      </SelectionField>
+      <Link id="mov1#ctm2#enu17#ln62" name="Pesquisar" to="mov1#ctm2#inu16" type="normal" validate="true">
+        <LinkParameter id="mov1#ctm2#enu17#ln62#par45" name="Curso_AttCondition9" source="mov1#ctm2#enu17#sfld4" target="mov1#ctm2#inu16#su6#acond5"/>
+      </Link>
+    </EntryUnit>
+    <IndexUnit id="mov1#ctm2#inu16" name="Lista de Material" gr:x="120" gr:y="90" entity="ent2" displayAttributes="rel2#role3.ent9#att13 rel2#role3.ent9#att7 rel4#role8.ent3#att3" linkOrder="mov1#ctm2#inu16#ln71">
+      <Selector id="mov1#ctm2#inu16#su6" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#ctm2#inu16#su6#acond5" name="AttCondition9" predicate="eq" booleanOperator="or" implied="false" attributes="rel2#role3.ent9#att13"/>
+      </Selector>
+      <SortAttribute attribute="rel2#role3.ent9#att13" order="ascending"/>
+      <SortAttribute attribute="rel2#role3.ent9#att7" order="ascending"/>
+      <Link id="mov1#ctm2#inu16#ln71" name="Detalhes" to="mov1#ctm2#ocu2" type="normal" validate="true">
+        <LinkParameter id="mov1#ctm2#inu16#ln71#par56" name="oid_Output Collector Parameter2" source="data[].ent2#att18" target="mov1#ctm2#ocu2#ocp2"/>
+      </Link>
+    </IndexUnit>
+    <SelectorUnit id="mov1#ctm2#seu7" name="Cursos" gr:x="20" gr:y="20" entity="ent9">
+      <Link id="mov1#ctm2#seu7#ln66" name="Link96" to="mov1#ctm2#enu17" type="transport" validate="true">
+        <LinkParameter id="mov1#ctm2#seu7#ln66#par48" name="Ano_Curso[Ano]" source="ent9#att7Array" target="mov1#ctm2#enu17#sfld4#slot23"/>
+        <LinkParameter id="mov1#ctm2#seu7#ln66#par50" name="oid_Curso[oid]" source="ent9#att19Array" target="mov1#ctm2#enu17#sfld4#slot24"/>
+        <LinkParameter id="mov1#ctm2#seu7#ln66#par55" name="Sigla_Curso[Sigla]" source="ent9#att13Array" target="mov1#ctm2#enu17#sfld4#slot21"/>
+      </Link>
+    </SelectorUnit>
+    <OutputCollectorUnit gr:x="488" gr:y="147" id="mov1#ctm2#ocu2" name="Output Collector2">
+      <OutputCollectorParameter id="mov1#ctm2#ocu2#ocp2" name="Output Collector Parameter2"/>
+    </OutputCollectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#ctm2#enu17">
+          <layout:Field field="mov1#ctm2#enu17#sfld4"/>
+          <layout:Link link="mov1#ctm2#enu17#ln62"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#ctm2#inu16">
+          <layout:Attribute attribute="rel2#role3.ent9#att13"/>
+          <layout:Attribute attribute="rel2#role3.ent9#att7"/>
+          <layout:Attribute attribute="rel4#role8.ent3#att3"/>
+          <layout:Link link="mov1#ctm2#inu16#ln71"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>

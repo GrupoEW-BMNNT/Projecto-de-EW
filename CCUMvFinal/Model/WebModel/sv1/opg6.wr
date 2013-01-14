@@ -1,0 +1,35 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1#opg6" name="Criar Utilizador" transaction="true" gr:x="682" gr:y="1">
+  <OperationUnits>
+    <CreateUnit id="sv1#opg6#cru2" name="Create Estudante" gr:x="440" gr:y="170" skipBlankRecords="false" entity="ent4">
+      <OKLink id="sv1#opg6#cru2#oln6" name="OKLink4" to="sv1#opg6#cnu3" automaticCoupling="true"/>
+      <KOLink id="sv1#opg6#cru2#kln13" name="KOLink13" to="sv1#area11#page24"/>
+    </CreateUnit>
+    <ConnectUnit id="sv1#opg6#cnu1" name="Connect Estudante To Groups" secure="false" gr:x="0" gr:y="0" relationship="User2Group">
+      <SourceSelector id="sv1#opg6#cnu1#su16" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#opg6#cnu1#su16#kcond12" name="KeyCondition2" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv1#opg6#cnu1#su17" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#opg6#cnu1#su17#kcond13" name="KeyCondition3" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv1#opg6#cnu1#oln39" name="OKLink39" to="sv1#area11#lgu1"/>
+    </ConnectUnit>
+    <ConnectUnit id="sv1#opg6#cnu2" name="Connect Estudante To Group" gr:x="220" gr:y="0" relationship="User2DefaultGroup">
+      <SourceSelector id="sv1#opg6#cnu2#su18" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#opg6#cnu2#su18#kcond15" name="KeyCondition4" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv1#opg6#cnu2#su20" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#opg6#cnu2#su20#acond1" name="Users" predicate="eq" booleanOperator="or" implied="false" attributes="groupName" ignoreCase="true" value="Estudantes"/>
+      </TargetSelector>
+      <OKLink id="sv1#opg6#cnu2#oln8" name="OKLink5" to="sv1#opg6#cnu1" automaticCoupling="true"/>
+    </ConnectUnit>
+    <ConnectUnit gr:x="450" gr:y="20" id="sv1#opg6#cnu3" name="Connect Estudante 2 Curso" relationship="rel11#role21">
+      <SourceSelector id="sv1#opg6#cnu3#su21" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#opg6#cnu3#su21#kcond16" name="KeyCondition16" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv1#opg6#cnu3#su22" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#opg6#cnu3#su22#kcond17" name="KeyCondition17" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv1#opg6#cnu3#oln9" name="OKLink9" to="sv1#opg6#cnu2" automaticCoupling="true"/>
+    </ConnectUnit>
+  </OperationUnits>
+</OperationGroup>

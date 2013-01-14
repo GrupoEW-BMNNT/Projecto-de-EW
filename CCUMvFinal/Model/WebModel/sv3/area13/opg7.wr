@@ -1,0 +1,19 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="414" gr:y="39" id="sv3#area13#opg7" name="Alterar Perfil" transaction="true">
+  <OperationUnits>
+    <ModifyUnit id="sv3#area13#opg7#mfu3" name="Alterar Perfil" gr:x="30" gr:y="0" entity="ent4">
+      <Selector id="sv3#area13#opg7#mfu3#su61" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area13#opg7#mfu3#su61#kcond27" name="KeyCondition20" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#area13#opg7#mfu3#oln11" name="OKLink10" to="sv3#area13#opg7#rcnu4" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ReconnectUnit id="sv3#area13#opg7#rcnu4" name="Reconnect Estudante2Curso" gr:x="0" gr:y="120" relationship="rel11#role21">
+      <SourceSelector id="sv3#area13#opg7#rcnu4#su62" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area13#opg7#rcnu4#su62#kcond28" name="KeyCondition21" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv3#area13#opg7#rcnu4#su63" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area13#opg7#rcnu4#su63#kcond53" name="KeyCondition25" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv3#area13#opg7#rcnu4#oln12" name="OKLink12" to="sv3#area13#page26" automaticCoupling="true" gr:bendpoints="-170,35,130,130"/>
+    </ReconnectUnit>
+  </OperationUnits>
+</OperationGroup>

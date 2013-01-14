@@ -1,0 +1,30 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1074" gr:y="44" id="sv2#area5#opg3" name="Adicionar lista material" transaction="true">
+  <OperationUnits>
+    <TimeUnit id="sv2#area5#opg3#tmu2" name="Get Time" gr:x="0" gr:y="0">
+      <OKLink id="sv2#area5#opg3#tmu2#oln23" name="OKLink7" to="sv2#area5#opg3#cru5">
+        <LinkParameter id="sv2#area5#opg3#tmu2#oln23#par70" name="Current/Input Timestamp_dataActualizacao" source="currentTimestamp" target="sv2#area5#opg3#cru5.ent2#att8"/>
+      </OKLink>
+    </TimeUnit>
+    <CreateUnit id="sv2#area5#opg3#cru5" name="Nova Lista" gr:x="120" gr:y="0" entity="ent2">
+      <OKLink id="sv2#area5#opg3#cru5#oln24" name="OKLink8" to="sv2#area5#opg3#cnu10" automaticCoupling="true"/>
+    </CreateUnit>
+    <ConnectUnit id="sv2#area5#opg3#cnu10" name="Lista Material2Curso" gr:x="100" gr:y="120" relationship="rel2#role3">
+      <SourceSelector id="sv2#area5#opg3#cnu10#su48" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg3#cnu10#su48#kcond41" name="KeyCondition2" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#area5#opg3#cnu10#su49" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg3#cnu10#su49#kcond42" name="KeyCondition6" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#area5#opg3#cnu10#oln25" name="OKLink9" to="sv2#area5#opg3#cnu11" automaticCoupling="true"/>
+    </ConnectUnit>
+    <ConnectUnit id="sv2#area5#opg3#cnu11" name="Lista Material2AnoLectivo" gr:x="90" gr:y="240" relationship="rel4#role8">
+      <SourceSelector id="sv2#area5#opg3#cnu11#su50" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg3#cnu11#su50#kcond43" name="KeyCondition12" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#area5#opg3#cnu11#su51" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg3#cnu11#su51#kcond44" name="KeyCondition13" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#area5#opg3#cnu11#oln26" name="OKLink11" to="sv2#area5#page8#dau3" automaticCoupling="true"/>
+    </ConnectUnit>
+  </OperationUnits>
+</OperationGroup>

@@ -1,0 +1,41 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area14#page28" name="Pedidos de Impress&#227;o">
+  <ContentUnits>
+    <IndexUnit gr:x="34" gr:y="0" id="sv3#area14#page28#inu13" name="Pedidos de Impress&#227;o" entity="ent6" displayAttributes="rel6#role11.ent1#att9 rel6#role11.ent1#att12 ent6#att4" linkOrder="sv3#area14#page28#inu13#ln88 sv3#area14#page28#inu13#ln89">
+      <SortAttribute attribute="ent6#att4" order="ascending"/>
+      <SortAttribute attribute="rel6#role11.ent1#att9" order="ascending"/>
+      <Link id="sv3#area14#page28#inu13#ln88" name="Detalhes" to="sv3#area14#page30#dau8" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv3#area14#page28#inu13#ln89" name="Cancelar" to="sv3#area14#dlu9" automaticCoupling="true" type="normal" validate="true"/>
+      <Selector id="sv3#area14#page28#inu13#su31" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#area14#page28#inu13#su31#rcond2" name="RoleCondition2" predicate="in" implied="false" role="rel7#role13"/>
+      </Selector>
+    </IndexUnit>
+    <GetUnit gr:x="0" gr:y="106" id="sv3#area14#page28#gtu11" name="Get User" customDescriptor="false" contextParameters="UserCtxParam">
+      <Link id="sv3#area14#page28#gtu11#ln74" name="Link74" to="sv3#area14#page28#inu13" type="transport" validate="true" automaticCoupling="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area14#page28#inu13">
+          <layout:Attribute attribute="rel6#role11.ent1#att9"/>
+          <layout:Attribute attribute="rel6#role11.ent1#att12"/>
+          <layout:Attribute attribute="ent6#att4"/>
+          <layout:Link link="sv3#area14#page28#inu13#ln88"/>
+          <layout:Link link="sv3#area14#page28#inu13#ln89"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

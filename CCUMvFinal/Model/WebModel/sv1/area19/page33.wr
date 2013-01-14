@@ -1,0 +1,30 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area19#page33" name="Pesquisar material" landmark="true" gr:x="160" gr:y="0">
+  <ContentUnits>
+    <ModuleInstanceUnit id="sv1#area19#page33#miu7" name="Pesquisar material" gr:x="0" gr:y="0" moduleId="mov1#ctm1" linkOrder="sv1#area19#page33#miu7#ln91">
+      <Link id="sv1#area19#page33#miu7#ln91" name="Detalhes" to="sv1#area9#page21#dau6" type="normal" validate="true">
+        <LinkParameter id="sv1#area19#page33#miu7#ln91#par72" name="Output Collector Parameter1_KeyCondition3 [oid]" source="mov1#ctm1#ocu1#ocp1" target="sv1#area9#page21#dau6#su14#kcond10.ent1#att1"/>
+      </Link>
+    </ModuleInstanceUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area19#page33#miu7">
+          <layout:Link link="sv1#area19#page33#miu7#ln91"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

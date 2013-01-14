@@ -1,0 +1,81 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area13#page26" name="Perfil">
+  <ContentUnits>
+    <SelectorUnit gr:x="108" gr:y="4" id="sv3#area13#page26#seu15" name="Estudante" entity="ent4">
+      <Selector id="sv3#area13#page26#seu15#su24" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area13#page26#seu15#su24#kcond26" name="KeyCondition26" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv3#area13#page26#seu15#ln75" name="Link75" to="sv3#area13#page26#seu16" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv3#area13#page26#seu15#ln76" name="Link76" to="sv3#area13#page26#enu13" type="transport" validate="true">
+        <LinkParameter id="sv3#area13#page26#seu15#ln76#par81" name="contacto_Contacto" source="ent4#att22Array" target="sv3#area13#page26#enu13#fld28_slot"/>
+        <LinkParameter id="sv3#area13#page26#seu15#ln76#par87" name="email_Email" source="emailArray" target="sv3#area13#page26#enu13#fld27_slot"/>
+        <LinkParameter id="sv3#area13#page26#seu15#ln76#par88" name="userName_Nickname" source="userNameArray" target="sv3#area13#page26#enu13#fld25_slot"/>
+        <LinkParameter id="sv3#area13#page26#seu15#ln76#par89" name="password_Password" source="passwordArray" target="sv3#area13#page26#enu13#fld26_slot"/>
+      </Link>
+      <Link id="sv3#area13#page26#seu15#ln84" name="Link79" to="sv3#area13#opg7#mfu3" type="transport" automaticCoupling="true" validate="true"/>
+    </SelectorUnit>
+    <EntryUnit gr:x="226" gr:y="72" id="sv3#area13#page26#enu13" name="Perfil" fieldOrder="sv3#area13#page26#enu13#fld25 sv3#area13#page26#enu13#fld26 sv3#area13#page26#enu13#fld27 sv3#area13#page26#enu13#fld28 sv3#area13#page26#enu13#sfld12" linkOrder="sv3#area13#page26#enu13#ln86">
+      <SelectionField id="sv3#area13#page26#enu13#sfld12" name="Curso" type="string" modifiable="true" slotOrder="sv3#area13#page26#enu13#sfld12#slot13 sv3#area13#page26#enu13#sfld12#slot14 sv3#area13#page26#enu13#sfld12#slot15 sv3#area13#page26#enu13#sfld12#slot16">
+        <Slot id="sv3#area13#page26#enu13#sfld12#slot16" name="oid" output="true"/>
+        <Slot id="sv3#area13#page26#enu13#sfld12#slot15" name="Ano" label="true"/>
+        <Slot id="sv3#area13#page26#enu13#sfld12#slot14" name="Slot14" value="-" label="true"/>
+        <Slot id="sv3#area13#page26#enu13#sfld12#slot13" name="Sigla" label="true"/>
+      </SelectionField>
+      <Field id="sv3#area13#page26#enu13#fld27" name="Email" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv3#area13#page26#enu13#fld26" name="Password" type="password" modifiable="true" preloaded="true"/>
+      <Field id="sv3#area13#page26#enu13#fld25" name="Nickname" type="string" preloaded="true"/>
+      <Field id="sv3#area13#page26#enu13#fld28" name="Contacto" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv3#area13#page26#enu13#ln85" name="Link81" to="sv3#area13#opg7#rcnu4" type="transport" validate="true">
+        <LinkParameter id="sv3#area13#page26#enu13#ln85#par111" name="Curso_KeyCondition25 [oid] [CursoAno] [ConnectTarget]" source="sv3#area13#page26#enu13#sfld12" target="sv3#area13#opg7#rcnu4#su63#kcond53.ent9#att19"/>
+      </Link>
+      <Link id="sv3#area13#page26#enu13#ln86" name="Actualizar perfil" to="sv3#area13#opg7#mfu3" type="normal" validate="true">
+        <LinkParameter id="sv3#area13#page26#enu13#ln86#par101" name="Email_email" source="sv3#area13#page26#enu13#fld27" target="sv3#area13#opg7#mfu3.email"/>
+        <LinkParameter id="sv3#area13#page26#enu13#ln86#par102" name="Password_password" source="sv3#area13#page26#enu13#fld26" target="sv3#area13#opg7#mfu3.password"/>
+        <LinkParameter id="sv3#area13#page26#enu13#ln86#par15" name="Contacto_contacto" source="sv3#area13#page26#enu13#fld28" target="sv3#area13#opg7#mfu3.ent4#att22"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="96" gr:y="142" id="sv3#area13#page26#seu16" name="Curso" entity="ent9">
+      <Selector id="sv3#area13#page26#seu16#su25" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#area13#page26#seu16#su25#rcond9" name="RoleCondition9" predicate="in" implied="false" role="rel11#role21"/>
+      </Selector>
+      <Link id="sv3#area13#page26#seu16#ln77" name="Link77" to="sv3#area13#page26#enu13" type="transport" validate="true">
+        <LinkParameter id="sv3#area13#page26#seu16#ln77#par90" name="Sigla_Curso - Preselection" source="ent9#att19Array" target="sv3#area13#page26#enu13#sfld12_presel"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="226" gr:y="202" id="sv3#area13#page26#seu17" name="Cursos" entity="ent9">
+      <Link id="sv3#area13#page26#seu17#ln78" name="Link78" to="sv3#area13#page26#enu13" type="transport" validate="true">
+        <LinkParameter id="sv3#area13#page26#seu17#ln78#par97" name="Ano_Curso[Ano]" source="ent9#att7Array" target="sv3#area13#page26#enu13#sfld12#slot15"/>
+        <LinkParameter id="sv3#area13#page26#seu17#ln78#par104" name="oid_Curso[oid]" source="ent9#att19Array" target="sv3#area13#page26#enu13#sfld12#slot16"/>
+        <LinkParameter id="sv3#area13#page26#seu17#ln78#par109" name="Sigla_Curso[Sigla]" source="ent9#att13Array" target="sv3#area13#page26#enu13#sfld12#slot13"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="0" gr:y="0" id="sv3#area13#page26#gtu10" name="Get User" contextParameters="UserCtxParam">
+      <Link id="sv3#area13#page26#gtu10#ln73" name="Link73" to="sv3#area13#page26#seu15" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area13#page26#enu13">
+          <layout:Field field="sv3#area13#page26#enu13#fld25"/>
+          <layout:Field field="sv3#area13#page26#enu13#fld26"/>
+          <layout:Field field="sv3#area13#page26#enu13#fld27"/>
+          <layout:Field field="sv3#area13#page26#enu13#fld28"/>
+          <layout:Field field="sv3#area13#page26#enu13#sfld12"/>
+          <layout:Link link="sv3#area13#page26#enu13#ln86"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

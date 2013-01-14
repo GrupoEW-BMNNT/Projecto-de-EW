@@ -1,0 +1,15 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1182" gr:y="1750" id="sv2#area8" name="Gest&#227;o de anos lectivos" landmark="true" defaultPage="sv2#area8#page12">
+  <OperationUnits>
+    <CreateUnit gr:x="460" gr:y="32" id="sv2#area8#cru9" name="Novo Ano Lectivo" entity="ent3">
+      <OKLink id="sv2#area8#cru9#oln36" name="OKLink36" to="sv2#area8#page12" automaticCoupling="true" gr:bendpoints="-76,-21,144,-16"/>
+      <KOLink id="sv2#area8#cru9#kln11" name="KOLink11" to="sv2#area8#page12" automaticCoupling="true" gr:bendpoints="-73,51,147,56"/>
+    </CreateUnit>
+    <DeleteUnit gr:x="0" gr:y="32" id="sv2#area8#dlu6" name="Eliminar Ano Lectivo" entity="ent3">
+      <Selector id="sv2#area8#dlu6#su59" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#dlu6#su59#kcond51" name="KeyCondition51" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area8#dlu6#oln37" name="OKLink37" to="sv2#area8#page12" automaticCoupling="true" gr:bendpoints="83,-23,-149,-14"/>
+      <KOLink id="sv2#area8#dlu6#kln12" name="KOLink12" to="sv2#area8#page12" automaticCoupling="true" gr:bendpoints="81,46,-151,55"/>
+    </DeleteUnit>
+  </OperationUnits>
+</Area>
