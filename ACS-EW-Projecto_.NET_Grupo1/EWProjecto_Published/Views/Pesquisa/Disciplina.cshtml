@@ -1,0 +1,128 @@
+﻿@model EWProjecto.Models.ModelViews.PesquisaModel
+
+@{
+    ViewBag.Title = "Pesquisa de material por disciplina";
+    var materiaisLista = @Model.materiais.Select(m => new
+    {
+        oid = m.oid
+    }).ToArray();
+}
+
+<div class = "conteudoNormal">    
+    <h1>Pesquisa de material por disciplina</h1><br/>
+    @using (Html.BeginForm("Disciplina", "Pesquisa"))
+    {
+        <p class="submit"><input class = "inputBotao" type="submit" value="Pesquisar por disciplina"/>&nbsp;&nbsp;@Html.TextBoxFor(m => m.nomeDisciplina) @Html.LabelFor(m => m.nomeDisciplina)</p>
+        @Html.TextBoxFor(m => m.oidDisciplina, new { style = "display: none;" })
+    }
+    @if (Model.materiais.Count > 0)
+    {
+        <div class="clear"></div>
+		<ul class = "navigateMenu">
+            @if (Model.materiais.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PesquisaDisciplinaPage", new { page = (Model.materiais.PageIndex + 1), disciplina = Model.oidDisciplina })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.materiais.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PesquisaDisciplinaPage", new { page = (Model.materiais.PageIndex - 1), disciplina = Model.oidDisciplina })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+        <table class = "listasMaterial">
+            @foreach (var material in @Model.materiais)
+            {
+	        <tr>
+		        <td></td>
+		        <td class = "listasItem">
+        		    <a href="@Url.RouteUrl(new { controller = "Material", action = "Index", oid = material.oid })">
+			            <div class = "listasMaterialTexto"> @material.nome # @material.ListaMaterialDidactico.oidAnoLectivo [ @material.ListaMaterialDidactico.CursoAno.oidSigla  @material.ListaMaterialDidactico.CursoAno.ano º ano ]</div>
+                    </a>
+                    @if (ViewBag.username != null)
+                    {
+			            <ul class = "listasMaterialMenu">
+                            @if (Roles.IsUserInRole(ViewBag.UserName, "Estudante"))
+                            {
+				                <li class="botaoDentroDireita"><a href="#print_form" id="print_pop"><img src="@Url.Content("~/Content/Imagens/Icones/imprimir.png")" alt="Imprimir"/></a></li>
+                            }
+                            @if (Roles.IsUserInRole(ViewBag.UserName, "Administrador"))
+                            {
+				                <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Material", action = "Editar", id = material.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/editar.png")" alt="Editar"/></a></li>
+				                <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Material", action = "Delete", id = material.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="Eliminar"/></a></li>
+                            }
+			            </ul>
+                    }                        
+		        </td>
+	        </tr>
+            }
+        </table>
+		<ul class = "navigateMenu">
+            @if (Model.materiais.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PesquisaDisciplinaPage", new { page = (Model.materiais.PageIndex + 1), disciplina = Model.oidDisciplina })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.materiais.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PesquisaDisciplinaPage", new { page = (Model.materiais.PageIndex - 1), disciplina = Model.oidDisciplina })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+    }
+    else
+    {
+        <p>Não foram encontradas nenhumas listas.</p>
+    }
+</div>
+<a href="#x" class="overlay" id="print_form"></a>
+<div class="popup">
+	<h2>Especificar a impressão</h2>
+	<p>Especifique o pedido de impressão</p>
+    @using (Html.BeginForm("Imprimir", "Pesquisa"))
+    {
+        <p>@Html.TextBoxFor(m => m.pedidoNrCopias) @Html.LabelFor(m => m.pedidoNrCopias)</p>
+        <p>@Html.DropDownListFor(m => m.pedidoCor, new SelectList(Model.pedidoListaCores, "Value", "Text"), "- Seleccionar cor -") @Html.LabelFor(m => m.pedidoCor)</p>
+        <p>@Html.DropDownListFor(m => m.pedidoFrenteVerso, new SelectList(Model.pedidoListaFrenteVerso, "Value", "Text"), "- Seleccionar modo -") @Html.LabelFor(m => m.pedidoFrenteVerso)</p>
+        <p>@Html.DropDownListFor(m => m.pedidoPaginasFolha, new SelectList(Model.pedidoListaPaginasFolha, "Value", "Text"), "- Seleccionar nº páginas -") @Html.LabelFor(m => m.pedidoPaginasFolha)</p>
+        @Html.TextBoxFor(m => m.oid, new { style = "display: none;" })
+        @Html.TextBoxFor(m => m.oidDisciplina, new { style = "display: none;" })
+	    <p class="submit"><input class ="inputBotao" type="submit" value="Fazer pedido impressão" /></p>
+    }
+	<a class="close" href="#close"></a>
+</div>
+<script type="text/javascript">
+    $("tr").click(function () {
+        var array = @Html.Raw(Json.Encode(materiaisLista)); 
+        var oidMat = array[$(this).index()].oid; 
+        $("#oid").val(oidMat);
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#nomeDisciplina").autocomplete({
+            source: "/Search/AutocompleteDisciplinas",
+            minLength: 2,
+            select: function (event, ui) {
+                if (ui.item) {
+                    $("#nomeDisciplina").val(ui.item.label);
+                    $("#oidDisciplina").val(ui.item.value);
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+

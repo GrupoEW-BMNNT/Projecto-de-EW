@@ -1,0 +1,23 @@
+﻿@model EWProjecto.Models.ModelViews.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+<div class = "conteudoDividido">
+    <div class="conteudoDivididoEsquerda">
+        <h1>Login</h1>
+
+        @using (Html.BeginForm())
+        {
+            <p>@Html.TextBoxFor(m => m.username) @Html.LabelFor(m => m.username)</p>    
+            <p>@Html.PasswordFor(m => m.password) @Html.LabelFor(m => m.password)</p>
+            @Html.ValidationSummary()
+            <br />
+            <p class="submit"><input class = "inputBotao" type="submit" value="Iniciar Sessão"/></p>
+        }
+    </div>
+    <div class="conteudoDivididoDireita">
+        <img src="@Url.Content("~/Content/Imagens/login.png")" alt="Login"/>
+    </div>
+<div class="clear"></div>
+</div>

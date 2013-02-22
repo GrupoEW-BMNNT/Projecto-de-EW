@@ -1,0 +1,75 @@
+﻿@model EWProjecto.Models.ModelViews.AdministradorModel
+
+@{
+    ViewBag.Title = "Lista de administradores";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Lista de administradores</h1><br/>
+    <div class = "adicionar">
+		<a href="@Url.RouteUrl(new { controller = "Administradores", action = "Add" })">
+		    <div class = "textoSubMenu">Adicionar administrador</div>
+		    <div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/adicionarBranco.png")" alt="Adicionar administrador"/></div>
+		</a>
+	</div>
+
+    @if (Model.administradores.Count > 0)
+    {
+        <div class="clear"></div>
+		<ul class = "navigateMenu">
+            @if (Model.administradores.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("AdminPage", new { page = (Model.administradores.PageIndex + 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.administradores.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("AdminPage", new { page = (Model.administradores.PageIndex - 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+        <table class = "listasMaterial">
+            @foreach (var administrador in @Model.administradores)
+            {
+	        <tr>
+		        <td></td>
+		        <td class = "listasItem">
+			        <div class = "listasMaterialTexto"> @administrador.username </div>
+			        <ul class = "listasMaterialMenu">
+				        <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Administradores", action = "Delete", username = administrador.username })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="eliminar"/></a></li>
+			        </ul>
+		        </td>
+	        </tr>
+            }
+        </table>
+		<ul class = "navigateMenu">
+            @if (Model.administradores.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("AdminPage", new { page = (Model.administradores.PageIndex + 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.administradores.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("AdminPage", new { page = (Model.administradores.PageIndex - 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+    }
+    else
+    {
+        <p>Não existem administradores para mostrar</p>
+    }
+</div>
+

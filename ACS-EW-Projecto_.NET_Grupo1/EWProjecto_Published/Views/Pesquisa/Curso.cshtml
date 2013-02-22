@@ -1,0 +1,90 @@
+﻿@model EWProjecto.Models.ModelViews.PesquisaModel
+
+@{
+    ViewBag.Title = "Pesquisa listas de material por curso";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Pesquisa listas de material por curso</h1><br/>
+    @using (Html.BeginForm())
+    {
+    <p class="submit"><input class = "inputBotao" type="submit" value="Pesquisar por curso"/>&nbsp;&nbsp;@Html.TextBoxFor(m => m.curso) @Html.LabelFor(m => m.curso)</p>
+    }
+    @if (Model.listaMateriais.Count > 0)
+    { 
+        <div class="clear"></div>
+		<ul class = "navigateMenu">
+            @if (Model.listaMateriais.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PesquisaCursoPage", new { page = (Model.listaMateriais.PageIndex + 1), curso = Model.curso })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.listaMateriais.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PesquisaCursoPage", new { page = (Model.listaMateriais.PageIndex - 1), curso = Model.curso })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+        <table class = "listasMaterial">
+            @foreach (var listaMaterial in @Model.listaMateriais)
+            {
+	        <tr>
+		        <td></td>
+		        <td class = "listasItem">
+        		    <a href="@Url.RouteUrl(new { controller = "ListasMaterial", action = "Editar", oid = listaMaterial.oid })">
+			            <div class = "listasMaterialTexto"> @listaMaterial.oidAnoLectivo [ @listaMaterial.CursoAno.ano º ano ]</div>
+                    </a>
+                    @if (Roles.IsUserInRole(ViewBag.UserName, "Administrador"))
+                    {
+			            <ul class = "listasMaterialMenu">
+				            <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "ListasMaterial", action = "Editar", id = listaMaterial.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/editar.png")" alt="Editar"/></a></li>
+				            <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "ListasMaterial", action = "Delete", id = listaMaterial.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="Eliminar"/></a></li>
+			            </ul>
+                    }
+		        </td>
+	        </tr>
+            }
+        </table>
+		<ul class = "navigateMenu">
+            @if (Model.listaMateriais.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PesquisaCursoPage", new { page = (Model.listaMateriais.PageIndex + 1), curso = Model.curso })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.listaMateriais.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PesquisaCursoPage", new { page = (Model.listaMateriais.PageIndex - 1), curso = Model.curso })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+    }
+    else
+    {
+        <p>Não foram encontradas nenhumas listas.</p>
+    }
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#curso").autocomplete({
+            source: "/Search/AutocompleteCursos",
+            minLength: 2,
+            select: function (event, ui) {
+                if (ui.item) {
+                    $("#curso").val(ui.item.value);
+                }
+            }
+        });
+    });
+</script>

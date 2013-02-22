@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Editar curso";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Lista de anos - @ViewBag.sigla</h1>
+    <div class = "adicionar">
+		<a href="@Url.RouteUrl(new { controller = "AnosCurso", action = "Add", sigla = ViewBag.sigla })">
+		    <div class = "textoSubMenu">Adicionar ano</div>
+		    <div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/adicionarBranco.png")" alt="Adicionar ano"/></div>
+		</a>
+	</div>
+    @if (ViewBag.anosCurso != null)
+    {
+            <table class = "listasMaterial">
+                @foreach (var ano in @ViewBag.anosCurso)
+                {
+	            <tr>
+		            <td></td>
+		            <td class = "listasItem">
+			            <div class = "listasMaterialTexto"> @ano.ano</div>
+			            <ul class = "listasMaterialMenu">
+				            <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "AnosCurso", action = "Delete", id = ano.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="Editar"/></a></li>
+			            </ul>
+		            </td>
+	            </tr>
+                }
+            </table>
+    }
+    else
+    {
+        <p>Não existem anos de curso para mostrar</p>
+    }
+</div>

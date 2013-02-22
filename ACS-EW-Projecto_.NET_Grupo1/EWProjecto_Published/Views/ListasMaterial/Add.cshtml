@@ -1,0 +1,67 @@
+﻿@model EWProjecto.Models.ModelViews.ListasMaterialModel
+           
+@{
+    ViewBag.Title = "Adicionar lista de material";
+}
+<div class="conteudoDividido">
+	<div class="conteudoDivididoEsquerda">
+		<h1>Adicionar lista de material</h1><br/>
+        @using (Html.BeginForm())
+        {
+            <p>@Html.DropDownListFor(m => m.anoLectivo, Model.anosLectivos, "- Seleccionar ano -") @Html.Label("Ano lectivo")</p>
+            <p>@Html.TextBoxFor(m => m.curso) @Html.LabelFor(m => m.curso)</p>
+            <p>@Html.DropDownListFor(m => m.oidCurso, Model.anosCurso, new { @disabled = "disabled" }) @Html.Label("Ano de curso")</p>
+            <p>@Html.LabelFor(m => m.descricao) @Html.TextAreaFor(m => m.descricao)</p>
+            @Html.ValidationSummary()
+            <p></p>
+            <div class = "eliminar">
+				<a href="@Url.RouteUrl("Default", new { controller = "ListasMaterial", action = "Index" })">
+					<div class = "textoSubMenu">Voltar atrás</div>
+					<div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/returnBranco.png")" alt ="Voltar Atrás"/></div>
+				</a>
+			</div>
+            <p class="submit"><input class = "confirmar" type="submit" value="Adicionar"/></p>
+        } 
+	</div>
+	<div class="conteudoDivididoDireita">
+		<img width="200px" src="@Url.Content("~/Content/Imagens/lista.png")" alt = "Lista material"/> 
+	</div>	
+</div>
+<div class="clear"></div>
+<script type="text/javascript">
+    $(function () {
+        $("#curso").autocomplete({
+            source: "/Search/AutocompleteCursos",
+            minLength: 2,
+            select: function (event, ui) {
+                if (ui.item) {
+                    $("#curso").val(ui.item.value);
+                    var sigl = $("#curso").val();
+                    getAnos(sigl);
+                }
+            }
+        });
+    });
+
+    function getAnos(sigl) {
+        $.ajax({
+            url: "@Url.Action("AnosCurso", "Search")",
+            data: {sigla: sigl},
+            dataType: "json",
+            type: "POST",
+            error: function() {
+                alert("An error occurred.");
+            },
+            success: function(data) {
+                var items = "";
+                $.each(data, function(i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+
+                $("#oidCurso").html(items);
+                $("#oidCurso").removeAttr('disabled');
+            }
+        });
+    }
+</script>
+

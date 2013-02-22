@@ -1,0 +1,28 @@
+﻿@model EWProjecto.Models.ModelViews.AdministradorModel
+           
+@{
+    ViewBag.Title = "Adicionar administrador";
+}
+<div class="conteudoDividido">
+	<div class="conteudoDivididoEsquerda">
+		<h1>Adicionar administrador</h1><br/>
+        @using (Html.BeginForm())
+        {
+            <p>@Html.TextBoxFor(m => m.username) @Html.LabelFor(m => m.username)</p>
+            <p>@Html.PasswordFor(m => m.password) @Html.LabelFor(m => m.password)</p>
+            @Html.ValidationSummary()
+            <p></p>
+			<div class = "eliminar">
+				<a href="@Url.RouteUrl("Default", new { controller = "Administradores", action = "Index" })">
+					<div class = "textoSubMenu">Voltar atrás</div>
+					<div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/returnBranco.png")" alt ="Voltar Atrás"/></div>
+				</a>
+			</div>
+            <p class="submit"><input class = "confirmar" type="submit" value="Adicionar"/></p>
+		} 
+	</div>
+	<div class="conteudoDivididoDireita">
+		<img width="200px" src="@Url.Content("~/Content/Imagens/perfil.png")" alt = "Administrador"/> 
+	</div>
+</div>
+<div class="clear"></div>	

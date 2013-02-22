@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Perfil";
+}
+
+<div class = "conteudoDividido">
+
+    <div class="conteudoDivididoEsquerda">
+        <h1>Perfil</h1>
+        <br />
+        <div class="labelPerfil"><div class="labelCampo">Username:</div>@ViewBag.estudante.Utilizador.username</div><br />
+        <div class="labelPerfil"><div class="labelCampo">Contacto: </div>@ViewBag.estudante.contacto</div><br />
+        <div class="labelPerfil"><div class="labelCampo">E-mail: </div>@ViewBag.estudante.email</div><br />
+        <div class="labelPerfil"><div class="labelCampo">Curso: </div>@ViewBag.estudante.CursoAno.DescricaoCurso.descricao [ @ViewBag.estudante.CursoAno.oidSigla ], @ViewBag.estudante.CursoAno.ano º ano</div><br />
+    </div>
+
+    <div class="conteudoDivididoDireita">
+        <img src="@Url.Content("~/Content/Imagens/perfil.png")" alt="Perfil"/>
+    </div>
+</div>
+<div class="clear"></div>
+<p class="submit"><input class = "inputBotao" type="button" value="Alterar Perfil" onclick=" window.location.href = '@Url.RouteUrl(new { controller = "Perfil", action = "Editar" })';" /></p>

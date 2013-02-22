@@ -1,0 +1,110 @@
+﻿@model EWProjecto.Models.ModelViews.PedidosModel
+           
+@{
+    ViewBag.Title = "Lista pedidos de impressão";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Os meus pedidos de impressão</h1><br/>
+    @using (Html.BeginForm())
+    {
+    <p class="submit"><input class = "inputBotao" type="submit" value="Filtrar por tipo de pedido"/>&nbsp;&nbsp;@Html.DropDownListFor(m => m.pedidoTipo, Model.pedidoListaTipos) @Html.LabelFor(m => m.pedidoTipo)</p>
+    }
+    @if (@Model.listaPedidosImpressao.Count > 0)
+    {
+        <div class="clear"></div>
+		<ul class = "navigateMenu">
+            @if (Model.listaPedidosImpressao.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PedidosPage", new { page = (Model.listaPedidosImpressao.PageIndex + 1), tipo = Model.pedidoTipo })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.listaPedidosImpressao.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PedidosPage", new { page = (Model.listaPedidosImpressao.PageIndex - 1), tipo = Model.pedidoTipo })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+        <table class = "pedidosImpressao">
+            @foreach (var pedido in Model.listaPedidosImpressao)
+            {
+                if (pedido.concluido == null)
+                {
+			        <tr class = "pedidoImpressaoPendente">
+				        <td></td>
+				        <td class = "listasItem">
+					        <a href="@Url.RouteUrl(new { controller = "Pedidos", action = "Detalhes", oid = pedido.oid })"><div class = "listasMaterialTexto"> @pedido.MaterialDidactico.nome [ @pedido.custo € ]</div></a>
+					        <ul class = "listasMaterialMenu">
+				                <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Pedidos", action = "Delete", oid = pedido.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="Eliminar"/></a></li>
+					        </ul>
+				        </td>
+				        <td>
+					        <div class = "estadoPedidoImagem"><img src="@Url.Content("~/Content/Imagens/Icones/pendente.png")" alt="Pedido pendente"/></div>
+					        <div class = "estadoPedidoTexto">Pendente</div>
+				        </td>
+			        </tr>
+                }
+                else if (pedido.concluido == true)
+                {
+			        <tr class = "pedidoImpressaoAceite">
+				        <td></td>
+				        <td class = "listasItem">
+					        <a href="@Url.RouteUrl(new { controller = "Pedidos", action = "Detalhes", oid = pedido.oid })"><div class = "listasMaterialTexto"> @pedido.MaterialDidactico.nome [ @pedido.custo € ]</div></a>
+					        <ul class = "listasMaterialMenu">
+				                <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Pedidos", action = "Delete", oid = pedido.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="Eliminar"/></a></li>
+					        </ul>
+				        </td>
+				        <td>
+					        <div class = "estadoPedidoImagem"><img src="@Url.Content("~/Content/Imagens/Icones/concluido.png")" alt="Pedido concluido"/></div>
+					        <div class = "estadoPedidoTexto">Concluido</div>
+				        </td>
+			        </tr>
+                }
+                else
+                {
+			        <tr class = "pedidoImpressaoRejeitado">
+				        <td></td>
+				        <td class = "listasItem">
+					        <a href="@Url.RouteUrl(new { controller = "Pedidos", action = "Detalhes", oid = pedido.oid })"><div class = "listasMaterialTexto"> @pedido.MaterialDidactico.nome [ @pedido.custo € ]</div></a>
+					        <ul class = "listasMaterialMenu">
+				                <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Pedidos", action = "Delete", oid = pedido.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="Eliminar"/></a></li>
+					        </ul>
+				        </td>
+				        <td>
+					        <div class = "estadoPedidoImagem"><img src="@Url.Content("~/Content/Imagens/Icones/rejeitado.png")" alt="Pedido rejeitado"/></div>
+					        <div class = "estadoPedidoTexto">Rejeitado</div>
+				        </td>
+			        </tr>
+                }
+            }
+		</table>
+		<ul class = "navigateMenu">
+            @if (Model.listaPedidosImpressao.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PedidosPage", new { page = (Model.listaPedidosImpressao.PageIndex + 1), tipo = Model.pedidoTipo })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.listaPedidosImpressao.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PedidosPage", new { page = (Model.listaPedidosImpressao.PageIndex - 1), tipo = Model.pedidoTipo })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+    }
+    else
+    {
+        <p>Não existem pedidos de impressão para serem mostrados.</p>
+    }
+</div>

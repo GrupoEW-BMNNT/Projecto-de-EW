@@ -1,0 +1,47 @@
+﻿@model EWProjecto.Models.ModelViews.MaterialModel
+
+@{
+    ViewBag.Title = "Adicionar material didatico";
+}
+<div class="conteudoDividido">
+	<div class="conteudoDivididoEsquerda">
+		<h1>Adicionar material didatico</h1><br/>
+        @using (Html.BeginForm())
+        {
+            <p>@Html.TextBoxFor(m => m.nome) @Html.LabelFor(m => m.nome)</p>
+            <p>@Html.TextBoxFor(m => m.nrPaginas) @Html.LabelFor(m => m.nrPaginas)</p>
+            <p>@Html.TextBoxFor(m => m.nomeDisciplina) @Html.LabelFor(m => m.nomeDisciplina)</p>
+            <p>@Html.LabelFor(m => m.descricao) @Html.TextAreaFor(m => m.descricao)</p>
+            @Html.TextBoxFor(m => m.oidLista, new { style = "display: none;" })
+            @Html.TextBoxFor(m => m.oidDisciplina, new { style = "display: none;" })
+            @Html.ValidationSummary()
+            <p></p>
+            <div class = "eliminar">
+				<a href="@Url.RouteUrl("Default", new { controller = "ListasMaterial", action = "Editar", oid = Model.oidLista })">
+					<div class = "textoSubMenu">Voltar atrás</div>
+					<div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/returnBranco.png")" alt ="Voltar Atrás"/></div>
+				</a>
+			</div>
+            <p class="submit"><input class = "confirmar" type="submit" value="Adicionar"/></p>
+        } 
+	</div>
+	<div class="conteudoDivididoDireita">
+		<img width="200px" src="@Url.Content("~/Content/Imagens/material.png")" alt = "Material"/> 
+	</div>
+</div>
+<div class="clear"></div>	
+<script type="text/javascript">
+    $(function () {
+        $("#nomeDisciplina").autocomplete({
+            source: "/Search/AutocompleteDisciplinas",
+            minLength: 2,
+            select: function (event, ui) {
+                if (ui.item) {
+                    $("#nomeDisciplina").val(ui.item.label);
+                    $("#oidDisciplina").val(ui.item.value);
+                    return false;
+                }
+            }
+        });
+    });
+</script>

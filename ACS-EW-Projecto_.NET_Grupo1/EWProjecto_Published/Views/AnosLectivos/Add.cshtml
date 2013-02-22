@@ -1,0 +1,27 @@
+﻿@model EWProjecto.Models.ModelViews.AnoLectivoModel
+           
+@{
+    ViewBag.Title = "Adicionar ano lectivo";
+}
+<div class="conteudoDividido">
+	<div class="conteudoDivididoEsquerda">
+		<h1>Adicionar ano lectivo</h1><br/>
+        @using (Html.BeginForm())
+        {
+            <p>@Html.TextBoxFor(m => m.anoLectivo) @Html.LabelFor(m => m.anoLectivo)</p>
+            @Html.ValidationSummary()
+            <p></p>
+            <div class = "eliminar">
+				<a href="@Url.RouteUrl("Default", new { controller = "AnosLectivos", action = "Index" })">
+					<div class = "textoSubMenu">Voltar atrás</div>
+					<div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/returnBranco.png")" alt ="Voltar Atrás"/></div>
+				</a>
+			</div>
+            <p class="submit"><input class = "confirmar" type="submit" value="Adicionar"/></p>
+        } 
+	</div>
+	<div class="conteudoDivididoDireita">
+		<img width="200px" src="@Url.Content("~/Content/Imagens/lista.png")" alt = "Ano lectivo"/> 
+	</div>	
+</div>
+<div class="clear"></div>

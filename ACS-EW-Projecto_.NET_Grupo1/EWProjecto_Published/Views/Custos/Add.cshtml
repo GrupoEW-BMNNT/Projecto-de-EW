@@ -1,0 +1,28 @@
+﻿@model EWProjecto.Models.ModelViews.CustoModel
+           
+@{
+    ViewBag.Title = "Adicionar custo";
+}
+<div class="conteudoDividido">
+	<div class="conteudoDivididoEsquerda">
+		<h1>Adicionar custo</h1><br/>
+        @using (Html.BeginForm())
+        {
+            <p>@Html.TextBoxFor(m => m.descricao) @Html.LabelFor(m => m.descricao)</p>
+            <p>@Html.TextBoxFor(m => m.custo) @Html.LabelFor(m => m.custo)</p>
+            @Html.ValidationSummary()
+            <p></p>
+            <div class = "eliminar">
+				<a href="@Url.RouteUrl("Default", new { controller = "Custos", action = "Index" })">
+					<div class = "textoSubMenu">Voltar atrás</div>
+					<div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/returnBranco.png")" alt ="Voltar Atrás"/></div>
+				</a>
+			</div>
+            <p class="submit"><input class = "confirmar" type="submit" value="Adicionar"/></p>
+        } 
+	</div>
+	<div class="conteudoDivididoDireita">
+		<img width="200px" src="@Url.Content("~/Content/Imagens/lista.png")" alt = "Custo"/> 
+	</div>	
+</div>
+<div class="clear"></div>

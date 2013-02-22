@@ -1,0 +1,54 @@
+﻿@model EWProjecto.Models.ModelViews.MaterialModel
+
+@{
+    ViewBag.Title = "Detalhes material didáctico";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Detalhes material didáctico</h1>
+    <div class="labelPerfil"><div class="labelCampo">Nome:</div>@Model.nome</div><br/>
+    <div class="labelPerfil"><div class="labelCampo">Descrição:</div>@Model.descricao</div><br />
+    <div class="labelPerfil"><div class="labelCampo">N.º de páginas:</div>@Model.nrPaginas</div><br/>
+    <div class="labelPerfil"><div class="labelCampo">Disciplina:</div>@ViewBag.nomeDisciplina</div><br/>
+    <div class="labelPerfil"><div class="labelCampo">Curso:</div>@ViewBag.siglaCurso, @ViewBag.ano º ano</div><br/>
+    <div class="labelPerfil"><div class="labelCampo">Ano lectivo:</div>@ViewBag.anoLectivo</div><br />
+    <br /><br />
+    @if (ViewBag.username != null)
+    {
+        if (Roles.IsUserInRole(ViewBag.UserName, "Estudante"))
+        {
+            <div class = "confirmar">
+				<a href="#print_form" id="print_pop">
+				    <div class = "textoSubMenu">Imprimir material</div>
+				    <div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/imprimirBranco.png")" alt="Imprimir material"/></div>
+				</a>
+			</div>
+        }
+        else if (Roles.IsUserInRole(ViewBag.UserName, "Administrador"))
+        {
+            <div class = "adicionar">
+		        <a href="@Url.RouteUrl(new { controller = "Material", action = "Add", oid = Model.oidLista })">
+		            <div class = "textoSubMenu">Adicionar material</div>
+		            <div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/adicionarBranco.png")" alt="Adicionar material"/></div>
+		        </a>
+	        </div>
+        }
+
+    }
+</div>
+<a href="#x" class="overlay" id="print_form"></a>
+<div class="popup">
+	<h2>Especificar a impressão</h2>
+	<p>Especifique o pedido de impressão</p>
+    @using (Html.BeginForm())
+    {
+        <p>@Html.TextBoxFor(m => m.pedidoNrCopias) @Html.LabelFor(m => m.pedidoNrCopias)</p>
+        <p>@Html.DropDownListFor(m => m.pedidoCor, new SelectList(Model.pedidoListaCores, "Value", "Text"), "- Seleccionar cor -") @Html.LabelFor(m => m.pedidoCor)</p>
+        <p>@Html.DropDownListFor(m => m.pedidoFrenteVerso, new SelectList(Model.pedidoListaFrenteVerso, "Value", "Text"), "- Seleccionar modo -") @Html.LabelFor(m => m.pedidoFrenteVerso)</p>
+        <p>@Html.DropDownListFor(m => m.pedidoPaginasFolha, new SelectList(Model.pedidoListaPaginasFolha, "Value", "Text"), "- Seleccionar nº páginas -") @Html.LabelFor(m => m.pedidoPaginasFolha)</p>
+        @Html.TextBoxFor(m => m.oid, new { style = "display: none;" })
+
+	    <p class="submit"><input class ="inputBotao" type="submit" value="Fazer pedido impressão" /></p>
+    }
+	<a class="close" href="#close"></a>
+</div>

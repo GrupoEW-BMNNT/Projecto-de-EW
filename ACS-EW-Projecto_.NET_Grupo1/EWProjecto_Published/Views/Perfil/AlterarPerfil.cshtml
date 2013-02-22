@@ -1,0 +1,5 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript">     alert('@ViewBag.Mensagem'); window.location = "@Url.RouteUrl(new { controller = "Perfil", action = "Index" })";</script>

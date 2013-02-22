@@ -1,0 +1,74 @@
+﻿@model EWProjecto.Models.ModelViews.CursoModel
+
+@{
+    ViewBag.Title = "Lista de cursos";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Lista de cursos</h1><br/>
+    <div class = "adicionar">
+		<a href="@Url.RouteUrl(new { controller = "Cursos", action = "Add" })">
+		    <div class = "textoSubMenu">Adicionar Curso</div>
+		    <div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/adicionarBranco.png")" alt="Adicionar curso"/></div>
+		</a>
+	</div>
+    @if (Model.cursos.Count > 0)
+    {
+        <div class="clear"></div>
+		<ul class = "navigateMenu">
+            @if (Model.cursos.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("CursoPage", new { page = (Model.cursos.PageIndex + 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.cursos.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("CursoPage", new { page = (Model.cursos.PageIndex - 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+        <table class = "listasMaterial">
+            @foreach (var curso in @Model.cursos)
+            {
+	        <tr>
+		        <td></td>
+		        <td class = "listasItem">
+			        <div class = "listasMaterialTexto"> @curso.descricao [ @curso.sigla ]</div>
+			        <ul class = "listasMaterialMenu">
+				        <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Cursos", action = "Editar", id = curso.sigla })"><img src="@Url.Content("~/Content/Imagens/Icones/editar.png")" alt="Editar"/></a></li>
+				        <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Cursos", action = "Delete", sigla = curso.sigla })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="eliminar"/></a></li>
+			        </ul>
+		        </td>
+	        </tr>
+            }
+        </table>
+		<ul class = "navigateMenu">
+            @if (Model.cursos.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("CursoPage", new { page = (Model.cursos.PageIndex + 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.cursos.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("CursoPage", new { page = (Model.cursos.PageIndex - 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+    }
+    else
+    {
+        <p>Não existem cursos para mostrar.</p>
+    }
+</div>

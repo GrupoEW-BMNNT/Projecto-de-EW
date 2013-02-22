@@ -1,0 +1,83 @@
+﻿@model EWProjecto.Models.ModelViews.ListasMaterialModel
+
+@{
+    ViewBag.Title = "Lista de listas de materiais didaticos";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Lista de listas de materiais didaticos</h1><br/>
+    @using (Html.BeginForm())
+    {
+    <p class="submit"><input class = "inputBotao" type="submit" value="Filtrar por ano lectivo"/>&nbsp;&nbsp;@Html.DropDownListFor(m => m.anoLectivo, Model.anosLectivos) @Html.Label("Ano lectivo")</p>
+    }
+    <div class = "adicionar">
+		<a href="@Url.RouteUrl(new { controller = "ListasMaterial", action = "Add" })">
+		    <div class = "textoSubMenu">Adicionar lista de material</div>
+		    <div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/adicionarBranco.png")" alt="Adicionar lista de material"/></div>
+		</a>
+	</div>
+    @if (Model.listasMaterial.Count > 0)
+    {
+        <div class="clear"></div>
+		<ul class = "navigateMenu">
+            @if (Model.listasMaterial.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("ListaListasPage", new { page = (Model.listasMaterial.PageIndex + 1), anoLectivo = Model.anoLectivo })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.listasMaterial.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("ListaListasPage", new { page = (Model.listasMaterial.PageIndex - 1), anoLectivo = Model.anoLectivo })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+        <table class = "listasMaterial">
+            @foreach (var listaMaterial in @Model.listasMaterial)
+            {
+	        <tr>
+		        <td></td>
+		        <td class = "listasItem">
+        		    <a href="@Url.RouteUrl(new { controller = "ListasMaterial", action = "Editar", oid = listaMaterial.oid })">
+			            <div class = "listasMaterialTexto"> @listaMaterial.CursoAno.oidSigla [ @listaMaterial.CursoAno.ano º ano ]</div>
+                    </a>
+                    @if (ViewBag.username != null)
+                    {
+			            <ul class = "listasMaterialMenu">
+				            <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "ListasMaterial", action = "Editar", id = listaMaterial.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/editar.png")" alt="Editar"/></a></li>
+				            <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "ListasMaterial", action = "Delete", id = listaMaterial.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="eliminar"/></a></li>
+                        </ul>
+                    }
+		        </td>
+	        </tr>
+            }
+        </table>
+		<ul class = "navigateMenu">
+            @if (Model.listasMaterial.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("ListaListasPage", new { page = (Model.listasMaterial.PageIndex + 1), anoLectivo = Model.anoLectivo })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.listasMaterial.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("ListaListasPage", new { page = (Model.listasMaterial.PageIndex - 1), anoLectivo = Model.anoLectivo })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+    }
+    else
+    {
+        <p>Não existem listas para mostrar.</p>
+    }
+</div>

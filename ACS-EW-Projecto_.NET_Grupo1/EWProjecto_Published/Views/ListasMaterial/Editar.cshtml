@@ -1,0 +1,119 @@
+﻿@model EWProjecto.Models.ModelViews.MaterialModel
+
+@{
+    ViewBag.Title = "Lista de material";
+    var materiaisLista = @Model.materiais.Select(m => new
+    {
+        oid = m.oid
+    }).ToArray();
+}
+
+<div class = "conteudoNormal">    
+    <h1>Lista de material</h1>
+    <div class="labelPerfil"><div class="labelCampo">Curso:</div>@ViewBag.lmd.CursoAno.oidSigla, @ViewBag.lmd.CursoAno.ano º ano</div><br/>
+    <div class="labelPerfil"><div class="labelCampo">Ano lectivo:</div>@ViewBag.lmd.oidAnoLectivo</div><br />
+    <div class="labelPerfil"><div class="labelCampo">Descrição:</div>@ViewBag.lmd.descricao</div><br />
+    @if (ViewBag.username != null && Roles.IsUserInRole(ViewBag.UserName, "Administrador"))
+    {
+        <div class = "adicionar">
+		    <a href="@Url.RouteUrl(new { controller = "Material", action = "Add", oid = ViewBag.lmd.oid })">
+		        <div class = "textoSubMenu">Adicionar material</div>
+		        <div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/adicionarBranco.png")" alt="Adicionar material"/></div>
+		    </a>
+	    </div>
+    }
+    @if (Model.materiais.Count > 0)
+    {
+        <div class="clear"></div>
+		<ul class = "navigateMenu">
+            @if (Model.materiais.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("MateriaisPage", new { oid = Model.oidLista, page = (Model.materiais.PageIndex + 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.materiais.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("MateriaisPage", new { oid = Model.oidLista, page = (Model.materiais.PageIndex - 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+        <table class = "listasMaterial">
+            @foreach (var material in @Model.materiais)
+            {
+	        <tr>
+		        <td></td>
+		        <td class = "listasItem">
+		            <a href="@Url.RouteUrl(new { controller = "Material", action = "Index", oid = material.oid })">
+			            <div class = "listasMaterialTexto"> @material.nome [ @material.nrPaginas páginas ]</div>
+                    </a>
+                    @if (ViewBag.username != null)
+                    {
+			        <ul class = "listasMaterialMenu">
+                        @if (Roles.IsUserInRole(ViewBag.UserName, "Estudante"))
+                        {
+				            <li class="botaoDentroDireita"><a href="#print_form" id="print_pop"><img src="@Url.Content("~/Content/Imagens/Icones/imprimir.png")" alt="Imprimir"/></a></li>
+                        }
+                        else if (Roles.IsUserInRole(ViewBag.UserName, "Administrador"))
+                        {
+				            <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Material", action = "Delete", oid = material.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="Eliminar"/></a></li>
+                        }
+                    </ul>
+                    }
+		        </td>
+	        </tr>
+            }
+        </table>
+		<ul class = "navigateMenu">
+            @if (Model.materiais.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("MateriaisPage", new { oid = Model.oidLista, page = (Model.materiais.PageIndex + 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.materiais.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("MateriaisPage", new { oid = Model.oidLista, page = (Model.materiais.PageIndex - 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+    }
+    else
+    {
+        <p>Não existe material didáctico para mostrar.</p>
+    }
+</div>
+<a href="#x" class="overlay" id="print_form"></a>
+<div class="popup">
+	<h2>Especificar a impressão</h2>
+	<p>Especifique o pedido de impressão</p>
+    @using (Html.BeginForm())
+    {
+        <p>@Html.TextBoxFor(m => m.pedidoNrCopias) @Html.LabelFor(m => m.pedidoNrCopias)</p>
+        <p>@Html.DropDownListFor(m => m.pedidoCor, new SelectList(Model.pedidoListaCores, "Value", "Text"), "- Seleccionar cor -") @Html.LabelFor(m => m.pedidoCor)</p>
+        <p>@Html.DropDownListFor(m => m.pedidoFrenteVerso, new SelectList(Model.pedidoListaFrenteVerso, "Value", "Text"), "- Seleccionar modo -") @Html.LabelFor(m => m.pedidoFrenteVerso)</p>
+        <p>@Html.DropDownListFor(m => m.pedidoPaginasFolha, new SelectList(Model.pedidoListaPaginasFolha, "Value", "Text"), "- Seleccionar nº páginas -") @Html.LabelFor(m => m.pedidoPaginasFolha)</p>
+        @Html.TextBoxFor(m => m.oid, new { style = "display: none;" })
+        @Html.TextBoxFor(m => m.oidLista, new { style = "display: none;" })
+
+	    <p class="submit"><input class ="inputBotao" type="submit" value="Fazer pedido impressão" /></p>
+    }
+	<a class="close" href="#close"></a>
+</div>
+<script type="text/javascript">
+    $("tr").click(function () {
+        var array = @Html.Raw(Json.Encode(materiaisLista)); 
+        var oidMat = array[$(this).index()].oid; 
+        $("#oid").val(oidMat);
+    });
+</script>

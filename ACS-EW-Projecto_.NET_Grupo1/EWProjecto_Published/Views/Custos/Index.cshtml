@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Lista de custos";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Lista de custos</h1><br/>
+    <div class = "adicionar">
+		<a href="@Url.RouteUrl(new { controller = "Custos", action = "Add"})">
+		    <div class = "textoSubMenu">Adicionar custo</div>
+		    <div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/adicionarBranco.png")" alt="Adicionar custo"/></div>
+		</a>
+	</div>
+    @if (@ViewBag.custos != null)
+    {
+    <table class = "listasMaterial">
+        @foreach (var custo in @ViewBag.custos)
+        {
+	    <tr>
+		    <td></td>
+		    <td class = "listasItem">
+			    <div class = "listasMaterialTexto"> @custo.descricao # @custo.custo1€</div>
+			    <ul class = "listasMaterialMenu">
+				    <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Custos", action = "Delete", oid = custo.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="eliminar"/></a></li>
+			    </ul>
+		    </td>
+	    </tr>
+        }
+    </table>
+    }
+    else
+    {
+        <p>Não existem custos para mostrar.</p>
+    }
+</div>

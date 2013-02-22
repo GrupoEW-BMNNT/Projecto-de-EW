@@ -1,0 +1,29 @@
+﻿@model EWProjecto.Models.ModelViews.AnosCursoModel
+
+@{
+    ViewBag.Title = "Adicionar ano de curso";
+}
+<div class="conteudoDividido">
+	<div class="conteudoDivididoEsquerda">
+		<h1>Adicionar ano de curso</h1><br/>
+		<div class="labelPerfil"><div class="labelCampo">Curso:</div>@Model.sigla</div><br/>
+        @using (Html.BeginForm())
+        {
+            <p>@Html.TextBoxFor(m => m.anoCurso) @Html.LabelFor(m => m.anoCurso)</p>
+            @Html.ValidationSummary()
+            <p></p>
+			<div class = "eliminar">
+				<a href="@Url.RouteUrl("Default", new { controller = "Cursos", action = "Editar", sigla = Model.sigla })">
+					<div class = "textoSubMenu">Voltar atrás</div>
+					<div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/returnBranco.png")" alt ="Voltar Atrás"/></div>
+				</a>
+			</div>
+            <p class="submit"><input class = "confirmar" type="submit" value="Adicionar"/></p>
+        } 
+	</div>
+	<div class="conteudoDivididoDireita">
+		<img width="200px" src="@Url.Content("~/Content/Imagens/lista.png")" alt = "Curso"/> 
+	</div>
+</div>
+<div class="clear"></div>	
+

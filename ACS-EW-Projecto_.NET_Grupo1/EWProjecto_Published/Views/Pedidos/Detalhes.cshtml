@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Detalhes material didáctico";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Detalhes pedido impressão</h1><br/>
+    <br/>
+    <div class="labelPerfil"><div class="labelCampo">N.º de cópias:</div>@ViewBag.pedidoImpressao.nrCopias</div>
+    <div class="labelPerfil"><div class="labelCampo">Fotocópias a cores:</div>@(ViewBag.pedidoImpressao.cor == true ? "Sim" : "Não")</div>
+    <div class="labelPerfil"><div class="labelCampo">Frente e verso:</div>@(ViewBag.pedidoImpressao.frenteVerso == true ? "Sim" : "Não")</div>
+    <div class="labelPerfil"><div class="labelCampo">Custo:</div>@ViewBag.pedidoImpressao.custo</div>
+    <div class="labelPerfil"><div class="labelCampo">Páginas por folha:</div>@ViewBag.pedidoImpressao.pagPorFolha</div>
+    <div class="labelPerfil"><div class="labelCampo">Feito em:</div>@ViewBag.pedidoImpressao.adicionado.ToString("dd-MM-yyyy hh:mm")</div><br/>
+    <h2>Detalhes do material correspondente ao pedido</h2><br/>
+    <br/>
+    <div class="labelPerfil"><div class="labelCampo">Nome:</div>@ViewBag.pedidoImpressao.MaterialDidactico.nome</div>
+    <div class="labelPerfil"><div class="labelCampo">Descrição:</div>@ViewBag.pedidoImpressao.MaterialDidactico.descricao</div>
+    <div class="labelPerfil"><div class="labelCampo">Disciplina:</div>@ViewBag.pedidoImpressao.MaterialDidactico.Disciplina.nome</div>
+    <div class="labelPerfil"><div class="labelCampo">Curso:</div>@ViewBag.pedidoImpressao.MaterialDidactico.ListaMaterialDidactico.CursoAno.oidSigla, @ViewBag.pedidoImpressao.MaterialDidactico.ListaMaterialDidactico.CursoAno.ano º ano</div>
+    <div class="labelPerfil"><div class="labelCampo">Ano lectivo:</div>@ViewBag.pedidoImpressao.MaterialDidactico.ListaMaterialDidactico.oidAnoLectivo</div>
+</div>

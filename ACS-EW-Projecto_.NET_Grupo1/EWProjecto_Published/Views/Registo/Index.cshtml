@@ -1,0 +1,63 @@
+﻿@model EWProjecto.Models.ModelViews.RegistoModel
+           
+@{
+    ViewBag.Title = "Registar";
+}
+<div class="conteudoDividido">
+	<div class="conteudoDivididoEsquerda">
+		<h1>Registar</h1><br/>
+        @using (Html.BeginForm())
+        {
+            <p>@Html.TextBoxFor(m => m.username) @Html.LabelFor(m => m.username)</p>
+            <p>@Html.PasswordFor(m => m.password) @Html.LabelFor(m => m.password)</p>
+            <p>@Html.TextBoxFor(m => m.email) @Html.LabelFor(m => m.email)</p>
+            <p>@Html.TextBoxFor(m => m.contacto) @Html.LabelFor(m => m.contacto)</p>
+            <p>@Html.TextBoxFor(m => m.curso) @Html.LabelFor(m => m.curso)</p>
+            <p>@Html.DropDownListFor(m => m.oidCurso, Model.anosCurso, new { @disabled = "disabled" }) @Html.Label("Ano de curso")</p>
+            @Html.ValidationSummary()
+            <p></p>
+            <p class="submit"><input class = "inputBotao" type="submit" value="Registar"/></p>
+        } 
+	</div>
+	<div class="conteudoDivididoDireita">
+		<img width="200px" src="@Url.Content("~/Content/Imagens/registar.png")" alt = "Estudante"/> 
+	</div>	
+</div>
+<div class="clear"></div>
+<script type="text/javascript">
+    $(function () {
+        $("#curso").autocomplete({
+            source: "/Search/AutocompleteCursos",
+            minLength: 2,
+            select: function (event, ui) {
+                if (ui.item) {
+                    $("#curso").val(ui.item.value);
+                    var sigl = $("#curso").val();
+                    getAnos(sigl);
+                }
+            }
+        });
+    });
+
+    function getAnos(sigl) {
+        $.ajax({
+            url: "@Url.Action("AnosCurso", "Search")",
+            data: {sigla: sigl},
+            dataType: "json",
+            type: "POST",
+            error: function() {
+                alert("An error occurred.");
+            },
+            success: function(data) {
+                var items = "";
+                $.each(data, function(i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+
+                $("#oidCurso").html(items);
+                $("#oidCurso").removeAttr('disabled');
+            }
+        });
+    }
+</script>
+

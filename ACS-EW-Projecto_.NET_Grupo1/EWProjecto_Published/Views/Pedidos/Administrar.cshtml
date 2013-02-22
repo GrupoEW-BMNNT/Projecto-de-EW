@@ -1,0 +1,73 @@
+﻿@model EWProjecto.Models.ModelViews.PedidosModel
+  
+@{
+    ViewBag.Title = "Administrar pedidos";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Pedidos de impressão pendentes</h1><br/>
+    @if (Model.listaPedidosImpressao.Count > 0)
+    {
+        <div class="clear"></div>
+		<ul class = "navigateMenu">
+            @if (Model.listaPedidosImpressao.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PedidosAdminPage", new { page = (Model.listaPedidosImpressao.PageIndex + 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.listaPedidosImpressao.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PedidosAdminPage", new { page = (Model.listaPedidosImpressao.PageIndex - 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+        <table class = "listasMaterial">
+            @foreach (var pedido in @Model.listaPedidosImpressao)
+            {
+	        <tr>
+		        <td></td>
+		        <td class = "listasItem">
+        		    <a href="@Url.RouteUrl(new { controller = "Pedidos", action = "Detalhes", oid = pedido.oid })">
+			            <div class = "listasMaterialTexto"> @pedido.MaterialDidactico.nome # @pedido.MaterialDidactico.ListaMaterialDidactico.CursoAno.oidSigla [ @pedido.custo € - @pedido.Estudante.Utilizador.username ] </div>
+                    </a>
+                    @if (ViewBag.username != null && Roles.IsUserInRole(ViewBag.UserName, "Administrador"))
+                    {
+			            <ul class = "listasMaterialMenu">
+				            <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Pedidos", action = "Aceitar", oid = pedido.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/aceitar.png")" alt="Aceitar"/></a></li>
+				            <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "Pedidos", action = "Rejeitar", oid = pedido.oid })"><img src="@Url.Content("~/Content/Imagens/Icones/rejeitar.png")" alt="Rejeitar"/></a></li>
+			            </ul>
+                    }
+		        </td>
+	        </tr>
+            }
+        </table>
+		<ul class = "navigateMenu">
+            @if (Model.listaPedidosImpressao.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PedidosAdminPage", new { page = (Model.listaPedidosImpressao.PageIndex + 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.listaPedidosImpressao.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("PedidosAdminPage", new { page = (Model.listaPedidosImpressao.PageIndex - 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+    }
+    else
+    {
+        <p>Não existem pedidos pendentes para mostrar.</p>
+    }
+</div>

@@ -1,0 +1,73 @@
+﻿@model EWProjecto.Models.ModelViews.AnoLectivoModel
+
+@{
+    ViewBag.Title = "Lista de anos lectivos";
+}
+
+<div class = "conteudoNormal">    
+    <h1>Lista de anos lectivos</h1><br/>
+    <div class = "adicionar">
+		<a href="@Url.RouteUrl(new { controller = "AnosLectivos", action = "Add" })">
+		    <div class = "textoSubMenu">Adicionar Ano Lectivo</div>
+		    <div class = "botaoDentroDireita"><img src="@Url.Content("~/Content/Imagens/Icones/adicionarBranco.png")" alt="Adicionar ano lectivo"/></div>
+		</a>
+	</div>
+    @if (Model.anosLectivos.Count > 0)
+    {
+        <div class="clear"></div>
+		<ul class = "navigateMenu">
+            @if (Model.anosLectivos.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("AnoLectivoPage", new { page = (Model.anosLectivos.PageIndex + 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.anosLectivos.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("AnoLectivoPage", new { page = (Model.anosLectivos.PageIndex - 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+        <table class = "listasMaterial">
+            @foreach (var anoLectivo in @Model.anosLectivos)
+            {
+	        <tr>
+		        <td></td>
+		        <td class = "listasItem">
+			        <div class = "listasMaterialTexto"> @anoLectivo.Ano </div>
+			        <ul class = "listasMaterialMenu">
+				        <li class="botaoDentroDireita"><a href="@Url.RouteUrl(new { controller = "AnosLectivos", action = "Delete", ano = anoLectivo.Ano })"><img src="@Url.Content("~/Content/Imagens/Icones/eliminar.png")" alt="eliminar"/></a></li>
+			        </ul>
+		        </td>
+	        </tr>
+            }
+        </table>
+		<ul class = "navigateMenu">
+            @if (Model.anosLectivos.HasNextPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("AnoLectivoPage", new { page = (Model.anosLectivos.PageIndex + 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></a></li>
+            }
+            else
+            { 
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/next.png")" alt="Próxima página"/></li>
+            }
+            @if (Model.anosLectivos.HasPreviousPage)
+            {
+			    <li class="botaoDentroDireita"><a href="@Url.RouteUrl("AnoLectivoPage", new { page = (Model.anosLectivos.PageIndex - 1) })" class = "innerNavigateEnabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></a></li>
+            }
+            else
+            {
+			    <li class="botaoDentroDireita innerNavigateDisabled"><img src="@Url.Content("~/Content/Imagens/Icones/back.png")" alt="Página anterior"/></li>
+            }
+		</ul>
+    }
+    else
+    {
+        <p>Não existem anos lectivos para mostrar.</p>
+    }
+</div>
