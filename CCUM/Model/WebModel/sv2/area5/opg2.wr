@@ -1,0 +1,44 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1408" gr:y="486" id="sv2#area5#opg2" name="Adicionar lista material" transaction="true">
+  <OperationUnits>
+    <ConnectUnit id="sv2#area5#opg2#cnu7" name="Material2Disciplina" gr:x="116" gr:y="189" relationship="rel3#role6">
+      <SourceSelector id="sv2#area5#opg2#cnu7#su41" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg2#cnu7#su41#kcond35" name="KeyCondition18" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#area5#opg2#cnu7#su42" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg2#cnu7#su42#kcond36" name="KeyCondition19" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#area5#opg2#cnu7#oln19" name="OKLink12" to="sv2#area5#opg2#cnu9" automaticCoupling="true"/>
+    </ConnectUnit>
+    <CreateUnit id="sv2#area5#opg2#cru4" name="NovoMaterial" gr:x="148" gr:y="331" entity="ent1">
+      <OKLink id="sv2#area5#opg2#cru4#oln20" name="OKLink10" to="sv2#area5#opg2#cnu7" automaticCoupling="true"/>
+    </CreateUnit>
+    <ConnectUnit id="sv2#area5#opg2#cnu8" name="Material2Lista Material" gr:x="278" gr:y="0" relationship="rel1#role1">
+      <SourceSelector id="sv2#area5#opg2#cnu8#su43" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg2#cnu8#su43#kcond37" name="KeyCondition16" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#area5#opg2#cnu8#su44" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg2#cnu8#su44#kcond38" name="KeyCondition17" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#area5#opg2#cnu8#oln21" name="OKLink14" to="sv2#area5#opg2#tmu3"/>
+    </ConnectUnit>
+    <ConnectUnit id="sv2#area5#opg2#cnu9" name="Material2Curso" gr:x="336" gr:y="149" relationship="rel5#role9">
+      <SourceSelector id="sv2#area5#opg2#cnu9#su45" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg2#cnu9#su45#kcond39" name="KeyCondition20" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#area5#opg2#cnu9#su46" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg2#cnu9#su46#kcond40" name="KeyCondition21" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#area5#opg2#cnu9#oln22" name="OKLink13" to="sv2#area5#opg2#cnu8" automaticCoupling="true"/>
+    </ConnectUnit>
+    <TimeUnit gr:x="170" gr:y="31" id="sv2#area5#opg2#tmu3" name="Get Time">
+      <OKLink id="sv2#area5#opg2#tmu3#oln5" name="OKLink5" to="sv2#area5#opg2#mfu1">
+        <LinkParameter id="sv2#area5#opg2#tmu3#oln5#par34" name="Current/Input Timestamp_dataActualizacao" source="currentTimestamp" target="sv2#area5#opg2#mfu1.ent2#att8"/>
+      </OKLink>
+    </TimeUnit>
+    <ModifyUnit gr:x="0" gr:y="21" id="sv2#area5#opg2#mfu1" name="Alterar Lista" entity="ent2">
+      <Selector id="sv2#area5#opg2#mfu1#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#opg2#mfu1#su8#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationGroup>

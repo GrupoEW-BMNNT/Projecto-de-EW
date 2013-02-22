@@ -1,0 +1,46 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area16#page15" name="Lista Material" gr:x="0" gr:y="270">
+  <ContentUnits>
+    <DataUnit id="sv4#area16#page15#dau10" gr:x="0" gr:y="0" entity="ent2" displayAttributes="rel2#role3.ent9#att13 rel2#role3.ent9#att7 rel4#role8.ent3#att3" name="Lista">
+      <Selector id="sv4#area16#page15#dau10#su64" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area16#page15#dau10#su64#kcond52" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area16#page15#dau10#ln63" name="Link5" to="sv4#area16#page15#inu17" type="transport" automaticCoupling="true" validate="true"/>
+    </DataUnit>
+    <IndexUnit id="sv4#area16#page15#inu17" name="Lista de Material" linkOrder="sv4#area16#page15#inu17#ln64" gr:x="146" gr:y="6" entity="ent1" displayAttributes="ent1#att9 ent1#att12">
+      <Selector id="sv4#area16#page15#inu17#su70" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area16#page15#inu17#su70#rcond11" name="material" predicate="in" implied="false" role="rel1#role2"/>
+      </Selector>
+      <Link id="sv4#area16#page15#inu17#ln64" name="Detalhes" to="sv4#area16#page13#dau7" type="normal" automaticCoupling="true" validate="true"/>
+      <SortAttribute attribute="ent1#att9" order="descending"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area16#page15#dau10">
+          <layout:Attribute attribute="rel2#role3.ent9#att13"/>
+          <layout:Attribute attribute="rel2#role3.ent9#att7"/>
+          <layout:Attribute attribute="rel4#role8.ent3#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area16#page15#inu17">
+          <layout:Link link="sv4#area16#page15#inu17#ln64"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Attribute attribute="ent1#att12"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

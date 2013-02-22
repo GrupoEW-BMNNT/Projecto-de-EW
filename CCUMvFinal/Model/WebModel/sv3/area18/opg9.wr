@@ -1,0 +1,30 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="62" gr:y="162" id="sv3#area18#opg9" name="Adicionar pedido impress&#227;o" transaction="true">
+  <OperationUnits>
+    <ConnectUnit id="sv3#area18#opg9#cnu14" name="Connect PedidoImpressao2Estudante" gr:x="20" gr:y="0" relationship="rel7#role14">
+      <SourceSelector id="sv3#area18#opg9#cnu14#su73" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area18#opg9#cnu14#su73#kcond54" name="KeyCondition24" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv3#area18#opg9#cnu14#su78" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area18#opg9#cnu14#su78#kcond57" name="KeyCondition25" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv3#area18#opg9#cnu14#oln49" name="OKLink49" to="sv3#area14" automaticCoupling="true"/>
+    </ConnectUnit>
+    <TimeUnit id="sv3#area18#opg9#tmu5" name="Get Time" gr:x="80" gr:y="340">
+      <OKLink id="sv3#area18#opg9#tmu5#oln44" name="OKLink7" to="sv3#area18#opg9#cru10">
+        <LinkParameter id="sv3#area18#opg9#tmu5#oln44#par31" name="Current/Input Timestamp_adicionado" source="currentTimestamp" target="sv3#area18#opg9#cru10.ent6#att2"/>
+      </OKLink>
+    </TimeUnit>
+    <ConnectUnit id="sv3#area18#opg9#cnu15" name="Connect PedidoImpressao2Material Didatico" gr:x="0" gr:y="120" relationship="rel6#role11">
+      <SourceSelector id="sv3#area18#opg9#cnu15#su79" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area18#opg9#cnu15#su79#kcond58" name="KeyCondition20" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv3#area18#opg9#cnu15#su80" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area18#opg9#cnu15#su80#kcond59" name="KeyCondition21" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv3#area18#opg9#cnu15#oln45" name="OKLink14" to="sv3#area18#opg9#cnu14" automaticCoupling="true"/>
+    </ConnectUnit>
+    <CreateUnit id="sv3#area18#opg9#cru10" name="Novo Pedido Impressao" gr:x="80" gr:y="230" entity="ent6">
+      <OKLink id="sv3#area18#opg9#cru10#oln48" name="OKLink10" to="sv3#area18#opg9#cnu15" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</OperationGroup>

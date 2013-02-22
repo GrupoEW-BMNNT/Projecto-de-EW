@@ -1,0 +1,91 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="310" id="sv2#area5#page9" name="Modificar lista de material" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="174" gr:y="284" id="sv2#area5#page9#enu5" name="Modificar lista" fieldOrder="sv2#area5#page9#enu5#sfld8 sv2#area5#page9#enu5#sfld9" linkOrder="sv2#area5#page9#enu5#ln25">
+      <SelectionField id="sv2#area5#page9#enu5#sfld9" name="Curso" type="string" modifiable="true" slotOrder="sv2#area5#page9#enu5#sfld9#slot5 sv2#area5#page9#enu5#sfld9#slot6 sv2#area5#page9#enu5#sfld9#slot7 sv2#area5#page9#enu5#sfld9#slot8">
+        <Slot id="sv2#area5#page9#enu5#sfld9#slot8" name="oid" output="true"/>
+        <Slot id="sv2#area5#page9#enu5#sfld9#slot7" name="Ano" label="true"/>
+        <Slot id="sv2#area5#page9#enu5#sfld9#slot6" name="Slot6" value="-" label="true"/>
+        <Slot id="sv2#area5#page9#enu5#sfld9#slot5" name="Sigla" label="true"/>
+      </SelectionField>
+      <SelectionField id="sv2#area5#page9#enu5#sfld8" name="Ano Lectivo" type="integer" modifiable="true"/>
+      <Link id="sv2#area5#page9#enu5#ln40" name="Link40" to="sv2#area5#opg1#rcnu1" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page9#enu5#ln40#par62" name="Ano Lectivo_KeyCondition31 [Ano] [Ano lectivo] [ConnectTarget]" source="sv2#area5#page9#enu5#sfld8" target="sv2#area5#opg1#rcnu1#su37#kcond31.ent3#att3"/>
+      </Link>
+      <Link id="sv2#area5#page9#enu5#ln58" name="Link58" to="sv2#area5#opg1#rcnu2" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page9#enu5#ln58#par38" name="Curso_KeyCondition34 [oid] [CursoAno] [ConnectTarget]" source="sv2#area5#page9#enu5#sfld9" target="sv2#area5#opg1#rcnu2#su40#kcond34.ent9#att19"/>
+      </Link>
+      <Link id="sv2#area5#page9#enu5#ln25" name="Modificar" to="sv2#area5#opg1#tmu1" type="normal" validate="true"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="330" gr:y="250" id="sv2#area5#page9#seu8" name="Cursos" entity="ent9">
+      <Link id="sv2#area5#page9#seu8#ln32" name="Link32" to="sv2#area5#page9#enu5" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page9#seu8#ln32#par51" name="Ano_Curso[Ano]" source="ent9#att7Array" target="sv2#area5#page9#enu5#sfld9#slot7"/>
+        <LinkParameter id="sv2#area5#page9#seu8#ln32#par52" name="oid_Curso[oid]" source="ent9#att19Array" target="sv2#area5#page9#enu5#sfld9#slot8"/>
+        <LinkParameter id="sv2#area5#page9#seu8#ln32#par60" name="Sigla_Curso[Sigla]" source="ent9#att13Array" target="sv2#area5#page9#enu5#sfld9#slot5"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="330" gr:y="330" id="sv2#area5#page9#seu9" name="Anos Lectivos" entity="ent3">
+      <Link id="sv2#area5#page9#seu9#ln31" name="Link31" to="sv2#area5#page9#enu5" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page9#seu9#ln31#par53" name="Ano_Ano Lectivo [label]" source="ent3#att3Array" target="sv2#area5#page9#enu5#sfld8_label"/>
+        <LinkParameter id="sv2#area5#page9#seu9#ln31#par54" name="Ano_Ano Lectivo [output]" source="ent3#att3Array" target="sv2#area5#page9#enu5#sfld8_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="270" id="sv2#area5#page9#seu10" name="Ano Lectivo" entity="ent3">
+      <Selector id="sv2#area5#page9#seu10#su29" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area5#page9#seu10#su29#rcond4" name="RoleCondition4" role="rel4#role8" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area5#page9#seu10#ln35" name="Link35" to="sv2#area5#page9#enu5" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page9#seu10#ln35#par59" name="Ano_Ano Lectivo - Preselection" source="ent3#att3Array" target="sv2#area5#page9#enu5#sfld8_presel"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="290" gr:y="130" id="sv2#area5#page9#seu11" name="Curso" entity="ent9">
+      <Selector id="sv2#area5#page9#seu11#su30" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area5#page9#seu11#su30#rcond6" name="RoleCondition6" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+      <Link id="sv2#area5#page9#seu11#ln37" name="Link37" to="sv2#area5#page9#enu5" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page9#seu11#ln37#par61" name="Sigla_Curso - Preselection" source="ent9#att19Array" target="sv2#area5#page9#enu5#sfld9_presel"/>
+      </Link>
+    </SelectorUnit>
+    <IndexUnit gr:x="10" gr:y="0" id="sv2#area5#page9#inu9" name="Listas de Material" entity="ent2" linkOrder="sv2#area5#page9#inu9#ln21" displayAttributes="rel2#role3.ent9#att13 rel2#role3.ent9#att7 rel4#role8.ent3#att3">
+      <Link id="sv2#area5#page9#inu9#ln21" name="Editar" to="sv2#area5#page9#seu19" automaticCoupling="true" type="normal" validate="true"/>
+      <SortAttribute attribute="ent2#att8" order="descending"/>
+    </IndexUnit>
+    <SelectorUnit id="sv2#area5#page9#seu19" entity="ent2" distinctAttributes="rel2#role3.ent9#att13 rel2#role3.ent9#att7 rel4#role8.ent3#att3" gr:x="10" gr:y="130" name="Lista de Material">
+      <Selector id="sv2#area5#page9#seu19#su1" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#page9#seu19#su1#kcond1" predicate="in" implied="false" name="KeyCondition24"/>
+      </Selector>
+      <Link id="sv2#area5#page9#seu19#ln1" name="Link34" to="sv2#area5#page9#seu10" type="transport" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#area5#page9#seu19#ln3" name="Link36" to="sv2#area5#page9#seu11" type="transport" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#area5#page9#seu19#ln4" name="Link26" to="sv2#area5#opg1#mfu4" type="transport" automaticCoupling="true" validate="true"/>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area5#page9#enu5">
+          <layout:Link link="sv2#area5#page9#enu5#ln25"/>
+          <layout:Field field="sv2#area5#page9#enu5#sfld8"/>
+          <layout:Field field="sv2#area5#page9#enu5#sfld9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area5#page9#inu9">
+          <layout:Link link="sv2#area5#page9#inu9#ln21"/>
+          <layout:Attribute attribute="rel2#role3.ent9#att13"/>
+          <layout:Attribute attribute="rel2#role3.ent9#att7"/>
+          <layout:Attribute attribute="rel4#role8.ent3#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

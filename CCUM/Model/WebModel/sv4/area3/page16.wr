@@ -1,0 +1,59 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area3#page16" name="Pesquisar listas" landmark="true" gr:x="0" gr:y="240">
+  <ContentUnits>
+    <IndexUnit id="sv4#area3#page16#inu19" name="Lista de Material" gr:x="100" gr:y="70" entity="ent2" linkOrder="sv4#area3#page16#inu19#ln80" displayAttributes="rel2#role3.ent9#att13 rel2#role3.ent9#att7 rel4#role8.ent3#att3">
+      <Selector id="sv4#area3#page16#inu19#su71" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area3#page16#inu19#su71#acond10" name="AttCondition9" predicate="eq" booleanOperator="or" implied="false" attributes="rel2#role3.ent9#att13"/>
+      </Selector>
+      <Link id="sv4#area3#page16#inu19#ln80" name="Detalhes" to="sv4#area16#page15#dau10" automaticCoupling="true" type="normal" validate="true"/>
+      <SortAttribute attribute="rel2#role3.ent9#att13" order="ascending"/>
+      <SortAttribute attribute="rel2#role3.ent9#att7" order="ascending"/>
+    </IndexUnit>
+    <SelectorUnit id="sv4#area3#page16#seu23" entity="ent9" name="Cursos" gr:x="0" gr:y="0">
+      <Link id="sv4#area3#page16#seu23#ln96" name="Link96" to="sv4#area3#page16#enu10" type="transport" validate="true">
+        <LinkParameter id="sv4#area3#page16#seu23#ln96#par134" name="Ano_Curso[Ano]" source="ent9#att7Array" target="sv4#area3#page16#enu10#sfld13#slot19"/>
+        <LinkParameter id="sv4#area3#page16#seu23#ln96#par135" name="oid_Curso[oid]" source="ent9#att19Array" target="sv4#area3#page16#enu10#sfld13#slot20"/>
+        <LinkParameter id="sv4#area3#page16#seu23#ln96#par136" name="Sigla_Curso[Sigla]" source="ent9#att13Array" target="sv4#area3#page16#enu10#sfld13#slot17"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit gr:x="0" gr:y="100" id="sv4#area3#page16#enu10" name="Curso" fieldOrder="sv4#area3#page16#enu10#sfld13" linkOrder="sv4#area3#page16#enu10#ln93">
+      <SelectionField id="sv4#area3#page16#enu10#sfld13" name="Curso" type="string" modifiable="true" slotOrder="sv4#area3#page16#enu10#sfld13#slot17 sv4#area3#page16#enu10#sfld13#slot18 sv4#area3#page16#enu10#sfld13#slot19 sv4#area3#page16#enu10#sfld13#slot20">
+        <Slot id="sv4#area3#page16#enu10#sfld13#slot17" name="Sigla" label="true" output="true"/>
+        <Slot id="sv4#area3#page16#enu10#sfld13#slot18" name="Slot18" value="-" label="true"/>
+        <Slot id="sv4#area3#page16#enu10#sfld13#slot19" name="Ano" label="true"/>
+        <Slot id="sv4#area3#page16#enu10#sfld13#slot20" name="oid"/>
+      </SelectionField>
+      <Link id="sv4#area3#page16#enu10#ln93" name="Pesquisar" to="sv4#area3#page16#inu19" type="normal" validate="true">
+        <LinkParameter id="sv4#area3#page16#enu10#ln93#par133" name="Curso_AttCondition9" source="sv4#area3#page16#enu10#sfld13" target="sv4#area3#page16#inu19#su71#acond10"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area3#page16#enu10">
+          <layout:Field field="sv4#area3#page16#enu10#sfld13"/>
+          <layout:Link link="sv4#area3#page16#enu10#ln93"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area3#page16#inu19">
+          <layout:Link link="sv4#area3#page16#inu19#ln80"/>
+          <layout:Attribute attribute="rel2#role3.ent9#att13"/>
+          <layout:Attribute attribute="rel2#role3.ent9#att7"/>
+          <layout:Attribute attribute="rel4#role8.ent3#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

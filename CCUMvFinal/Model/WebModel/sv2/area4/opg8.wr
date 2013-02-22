@@ -1,0 +1,25 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="2" id="sv2#area4#opg8" name="Criar Utilizador" transaction="true">
+  <OperationUnits>
+    <CreateUnit id="sv2#area4#opg8#cru3" name="Criar utilizador" gr:x="10" gr:y="0" entity="User">
+      <OKLink id="sv2#area4#opg8#cru3#oln40" name="OKLink2" to="sv2#area4#opg8#cnu6" automaticCoupling="true"/>
+    </CreateUnit>
+    <ConnectUnit id="sv2#area4#opg8#cnu6" name="Connect User2Group" gr:x="0" gr:y="100" relationship="User2DefaultGroup">
+      <SourceSelector id="sv2#area4#opg8#cnu6#su74" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area4#opg8#cnu6#su74#kcond62" name="KeyCondition58" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#area4#opg8#cnu6#su75" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area4#opg8#cnu6#su75#kcond63" name="KeyCondition59" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#area4#opg8#cnu6#oln41" name="OKLink14" to="sv2#area4#opg8#cnu13" automaticCoupling="true"/>
+    </ConnectUnit>
+    <ConnectUnit id="sv2#area4#opg8#cnu13" name="Connect User2Groups" gr:x="10" gr:y="230" relationship="User2Group">
+      <SourceSelector id="sv2#area4#opg8#cnu13#su76" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area4#opg8#cnu13#su76#kcond64" name="KeyCondition60" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#area4#opg8#cnu13#su77" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area4#opg8#cnu13#su77#kcond65" name="KeyCondition61" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#area4#opg8#cnu13#oln42" name="OKLink39" to="sv2#area4#page14" automaticCoupling="true"/>
+    </ConnectUnit>
+  </OperationUnits>
+</OperationGroup>

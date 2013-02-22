@@ -1,0 +1,15 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-258" gr:y="1746" id="sv2#area6" name="Gest&#227;o de cursos" landmark="true" defaultPage="sv2#area6#page10">
+  <OperationUnits>
+    <CreateUnit gr:x="450" gr:y="46" id="sv2#area6#cru7" name="Novo Curso" entity="ent9">
+      <OKLink id="sv2#area6#cru7#oln32" name="OKLink32" to="sv2#area6#page10" automaticCoupling="true"/>
+      <KOLink id="sv2#area6#cru7#kln7" name="KOLink7" to="sv2#area6#page10" automaticCoupling="true" gr:bendpoints="-73,8,137,27"/>
+    </CreateUnit>
+    <DeleteUnit gr:x="0" gr:y="26" id="sv2#area6#dlu4" name="Eliminar Curso" entity="ent9">
+      <Selector id="sv2#area6#dlu4#su57" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area6#dlu4#su57#kcond49" name="KeyCondition49" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area6#dlu4#oln33" name="OKLink33" to="sv2#area6#page10" automaticCoupling="true"/>
+      <KOLink id="sv2#area6#dlu4#kln8" name="KOLink8" to="sv2#area6#page10" automaticCoupling="true" gr:bendpoints="71,13,-138,16"/>
+    </DeleteUnit>
+  </OperationUnits>
+</Area>

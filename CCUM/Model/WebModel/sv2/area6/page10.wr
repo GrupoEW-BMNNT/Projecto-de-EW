@@ -1,0 +1,45 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="144" gr:y="0" id="sv2#area6#page10" name="Cursos">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area6#page10#inu5" name="Cursos" entity="ent9" displayAttributes="ent9#att7 ent9#att13" linkOrder="sv2#area6#page10#inu5#ln53">
+      <Link id="sv2#area6#page10#inu5#ln53" name="Remover" to="sv2#area6#dlu4" automaticCoupling="true" type="normal" validate="true"/>
+      <SortAttribute attribute="ent9#att13" order="ascending"/>
+    </IndexUnit>
+    <EntryUnit gr:x="100" gr:y="10" id="sv2#area6#page10#enu7" name="Novo Curso" linkOrder="sv2#area6#page10#enu7#ln52" fieldOrder="sv2#area6#page10#enu7#fld9 sv2#area6#page10#enu7#fld10">
+      <Link id="sv2#area6#page10#enu7#ln52" name="Adicionar" to="sv2#area6#cru7" type="normal" validate="true">
+        <LinkParameter id="sv2#area6#page10#enu7#ln52#par82" name="Ano de curso_anoCurso" source="sv2#area6#page10#enu7#fld10" target="sv2#area6#cru7.ent9#att7"/>
+        <LinkParameter id="sv2#area6#page10#enu7#ln52#par94" name="Curso_Sigla" source="sv2#area6#page10#enu7#fld9" target="sv2#area6#cru7.ent9#att13"/>
+      </Link>
+      <Field id="sv2#area6#page10#enu7#fld10" name="Ano de curso" type="string" modifiable="true"/>
+      <Field id="sv2#area6#page10#enu7#fld9" name="Curso" type="string" modifiable="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area6#page10#inu5">
+          <layout:Link link="sv2#area6#page10#inu5#ln53"/>
+          <layout:Attribute attribute="ent9#att7"/>
+          <layout:Attribute attribute="ent9#att13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area6#page10#enu7">
+          <layout:Link link="sv2#area6#page10#enu7#ln52"/>
+          <layout:Field field="sv2#area6#page10#enu7#fld9"/>
+          <layout:Field field="sv2#area6#page10#enu7#fld10"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

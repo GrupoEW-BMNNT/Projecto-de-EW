@@ -1,0 +1,84 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area11#page24" name="Registo" gr:x="394" gr:y="94" landmark="true">
+  <ContentUnits>
+    <EntryUnit id="sv1#area11#page24#enu11" name="Registo" linkOrder="sv1#area11#page24#enu11#ln65" customDescriptor="false" gr:x="0" gr:y="0" fieldOrder="sv1#area11#page24#enu11#fld21 sv1#area11#page24#enu11#fld20 sv1#area11#page24#enu11#fld19 sv1#area11#page24#enu11#fld18 sv1#area11#page24#enu11#fld22 sv1#area11#page24#enu11#sfld11">
+      <Field id="sv1#area11#page24#enu11#fld18" name="Contacto" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area11#page24#enu11#fld18#mnd3" name="Required" errorMessage="${fieldName} &#233; obrigat&#243;rio!"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area11#page24#enu11#fld19" name="Confirmar Password" type="password" modifiable="true">
+        <VRules>
+          <CompareValidationRule id="sv1#area11#page24#enu11#fld19#cmp2" name="Equal To" predicate="eq" valueField="sv1#area11#page24#enu11#fld20" errorMessage="${fieldName} deve ser igual!"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area11#page24#enu11#fld20" name="Password" type="password" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area11#page24#enu11#fld20#mnd4" name="Required" errorMessage="${fieldName} &#233; obrigat&#243;ria!"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area11#page24#enu11#fld21" name="Username" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area11#page24#enu11#fld21#mnd5" name="Required" errorMessage="${fieldName} &#233; obrigat&#243;rio!"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area11#page24#enu11#fld22" name="email" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area11#page24#enu11#fld22#mnd6" name="Required" errorMessage="${fieldName} &#233; obrigat&#243;rio!"/>
+        </VRules>
+      </Field>
+      <Link id="sv1#area11#page24#enu11#ln65" name="Registar" to="sv1#opg6#cru2" type="normal" validate="true">
+        <LinkParameter id="sv1#area11#page24#enu11#ln65#par42" name="email_email" source="sv1#area11#page24#enu11#fld22" target="sv1#opg6#cru2.email"/>
+        <LinkParameter id="sv1#area11#page24#enu11#ln65#par43" name="Password_password" source="sv1#area11#page24#enu11#fld20" target="sv1#opg6#cru2.password"/>
+        <LinkParameter id="sv1#area11#page24#enu11#ln65#par49" name="Username_userName" source="sv1#area11#page24#enu11#fld21" target="sv1#opg6#cru2.userName"/>
+        <LinkParameter id="sv1#area11#page24#enu11#ln65#par14" name="Contacto_contacto" source="sv1#area11#page24#enu11#fld18" target="sv1#opg6#cru2.ent4#att22"/>
+      </Link>
+      <SelectionField id="sv1#area11#page24#enu11#sfld11" name="Curso" type="string" modifiable="true" slotOrder="sv1#area11#page24#enu11#sfld11#slot1 sv1#area11#page24#enu11#sfld11#slot2 sv1#area11#page24#enu11#sfld11#slot3 sv1#area11#page24#enu11#sfld11#slot4">
+        <Slot id="sv1#area11#page24#enu11#sfld11#slot2" name="Slot2" label="true" value="-"/>
+        <Slot id="sv1#area11#page24#enu11#sfld11#slot1" name="Sigla" label="true"/>
+        <Slot id="sv1#area11#page24#enu11#sfld11#slot4" name="oid" output="true"/>
+        <Slot id="sv1#area11#page24#enu11#sfld11#slot3" name="Ano" label="true"/>
+      </SelectionField>
+      <Link id="sv1#area11#page24#enu11#ln70" name="Link70" to="sv1#opg6#cnu3" type="transport" validate="true">
+        <LinkParameter id="sv1#area11#page24#enu11#ln70#par25" name="Curso_KeyCondition17 [oid] [CursoAno] [Target]" source="sv1#area11#page24#enu11#sfld11" target="sv1#opg6#cnu3#su22#kcond17.ent9#att19"/>
+      </Link>
+      <Link id="sv1#area11#page24#enu11#ln22" name="Link22" to="sv1#area11#lgu1" type="transport" validate="true">
+        <LinkParameter id="sv1#area11#page24#enu11#ln22#par120" name="Username_Username" source="sv1#area11#page24#enu11#fld21" target="sv1#area11#lgu1.username"/>
+        <LinkParameter id="sv1#area11#page24#enu11#ln22#par121" name="Password_Password" source="sv1#area11#page24#enu11#fld20" target="sv1#area11#lgu1.password"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="10" gr:y="100" id="sv1#area11#page24#seu14" name="Cursos" entity="ent9">
+      <Link id="sv1#area11#page24#seu14#ln69" name="Link69" to="sv1#area11#page24#enu11" type="transport" validate="true">
+        <LinkParameter id="sv1#area11#page24#seu14#ln69#par7" name="Ano_Curso[Slot1]" source="ent9#att13Array" target="sv1#area11#page24#enu11#sfld11#slot1"/>
+        <LinkParameter id="sv1#area11#page24#seu14#ln69#par26" name="oid_Curso[oid]" source="ent9#att19Array" target="sv1#area11#page24#enu11#sfld11#slot4"/>
+        <LinkParameter id="sv1#area11#page24#seu14#ln69#par27" name="Ano_Curso[Slot3]" source="ent9#att7Array" target="sv1#area11#page24#enu11#sfld11#slot3"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area11#page24#enu11">
+          <layout:Field field="sv1#area11#page24#enu11#fld21"/>
+          <layout:Field field="sv1#area11#page24#enu11#fld20"/>
+          <layout:Field field="sv1#area11#page24#enu11#fld19"/>
+          <layout:Field field="sv1#area11#page24#enu11#fld18"/>
+          <layout:Field field="sv1#area11#page24#enu11#fld22"/>
+          <layout:Field field="sv1#area11#page24#enu11#sfld11"/>
+          <layout:Link link="sv1#area11#page24#enu11#ln65"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

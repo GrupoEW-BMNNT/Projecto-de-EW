@@ -1,0 +1,45 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area12#page31" name="Inicio">
+  <ContentUnits>
+    <IndexUnit gr:x="124" gr:y="0" id="sv3#area12#page31#inu14" name="Listas de Curso" entity="ent2" displayAttributes="rel2#role3.ent9#att7 rel4#role8.ent3#att3" linkOrder="sv3#area12#page31#inu14#ln36">
+      <Selector id="sv3#area12#page31#inu14#su68" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#area12#page31#inu14#su68#acond4" name="AttCondition4" predicate="eq" booleanOperator="or" implied="false" attributes="rel2#role3.ent9#att13" ignoreCase="false"/>
+      </Selector>
+      <SortAttribute attribute="rel4#role8.ent3#att3" order="descending"/>
+      <Link id="sv3#area12#page31#inu14#ln36" name="Detalhes" to="sv3#area18#page23#dau12" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <SelectorUnit gr:x="4" gr:y="10" id="sv3#area12#page31#seu18" name="Curso" entity="ent9">
+      <Selector id="sv3#area12#page31#seu18#su69" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#area12#page31#seu18#su69#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel11#role21"/>
+      </Selector>
+      <Link id="sv3#area12#page31#seu18#ln92" name="Link92" to="sv3#area12#page31#inu14" type="transport" validate="true">
+        <LinkParameter id="sv3#area12#page31#seu18#ln92#par96" name="Sigla_AttCondition4" source="ent9#att13Array" target="sv3#area12#page31#inu14#su68#acond4"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="0" gr:y="116" id="sv3#area12#page31#gtu9" name="Get User" contextParameters="UserCtxParam">
+      <Link id="sv3#area12#page31#gtu9#ln72" name="Link72" to="sv3#area12#page31#seu18" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area12#page31#inu14">
+          <layout:Attribute attribute="rel2#role3.ent9#att7"/>
+          <layout:Attribute attribute="rel4#role8.ent3#att3"/>
+          <layout:Link link="sv3#area12#page31#inu14#ln36"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

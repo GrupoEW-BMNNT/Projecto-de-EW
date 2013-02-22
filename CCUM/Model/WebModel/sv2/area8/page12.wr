@@ -1,0 +1,41 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="168" gr:y="0" id="sv2#area8#page12" name="Anos lectivos">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area8#page12#inu7" name="Anos lectivos" entity="ent3" linkOrder="sv2#area8#page12#inu7#ln57" displayAttributes="ent3#att3">
+      <Link id="sv2#area8#page12#inu7#ln57" name="Remover" to="sv2#area8#dlu6" automaticCoupling="true" type="normal" validate="true"/>
+      <SortAttribute attribute="ent3#att3" order="descending"/>
+    </IndexUnit>
+    <EntryUnit gr:x="116" gr:y="6" id="sv2#area8#page12#enu9" name="Novo ano lectivo" linkOrder="sv2#area8#page12#enu9#ln56" fieldOrder="sv2#area8#page12#enu9#fld12">
+      <Link id="sv2#area8#page12#enu9#ln56" name="Adicionar" to="sv2#area8#cru9" type="normal" validate="true">
+        <LinkParameter id="sv2#area8#page12#enu9#ln56#par85" name="Ano lectivo_Ano" source="sv2#area8#page12#enu9#fld12" target="sv2#area8#cru9.ent3#att3"/>
+      </Link>
+      <Field id="sv2#area8#page12#enu9#fld12" name="Ano lectivo" type="string" modifiable="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page12#inu7">
+          <layout:Link link="sv2#area8#page12#inu7#ln57"/>
+          <layout:Attribute attribute="ent3#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page12#enu9">
+          <layout:Link link="sv2#area8#page12#enu9#ln56"/>
+          <layout:Field field="sv2#area8#page12#enu9#fld12"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

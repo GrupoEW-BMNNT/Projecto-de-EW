@@ -1,0 +1,75 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="220" gr:y="16" id="sv2#area4#page14" name="Gest&#227;o de Utilizadores" landmark="true">
+  <ContentUnits>
+    <IndexUnit gr:x="162" gr:y="114" id="sv2#area4#page14#inu8" name="Utilizadores" entity="User" linkOrder="sv2#area4#page14#inu8#ln19" displayAttributes="userName email">
+      <Link id="sv2#area4#page14#inu8#ln19" name="Eliminar" to="sv2#area4#dlu8" automaticCoupling="true" type="normal" validate="true"/>
+      <SortAttribute attribute="userOID" order="descending"/>
+    </IndexUnit>
+    <EntryUnit gr:x="0" gr:y="122" id="sv2#area4#page14#enu6" name="Novo Utilizador" fieldOrder="sv2#area4#page14#enu6#fld13 sv2#area4#page14#enu6#fld14 sv2#area4#page14#enu6#fld15 sv2#area4#page14#enu6#fld16 sv2#area4#page14#enu6#sfld6" linkOrder="sv2#area4#page14#enu6#ln95">
+      <Field id="sv2#area4#page14#enu6#fld16" name="Email" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#area4#page14#enu6#fld16#mnd1" name="Required" errorMessage="&#201; necess&#225;rio preencher o ${fieldName}"/>
+          <EMailValidationRule id="sv2#area4#page14#enu6#fld16#email1" name="email" errorMessage="${fieldName} Tem de ser um email v&#225;lido"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area4#page14#enu6#fld15" name="Confirm Password" type="password" modifiable="true"/>
+      <Field id="sv2#area4#page14#enu6#fld14" name="Password" type="password" modifiable="true">
+        <VRules>
+          <CompareValidationRule id="sv2#area4#page14#enu6#fld14#cmp1" name="equalTo" predicate="eq" valueField="sv2#area4#page14#enu6#fld15" errorMessage="${fieldName} t&#234;m de ser iguais"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area4#page14#enu6#fld13" name="Nickname" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#area4#page14#enu6#fld13#mnd2" name="Required" errorMessage="&#201; necess&#225;rio preencher o ${fieldName}"/>
+        </VRules>
+      </Field>
+      <SelectionField id="sv2#area4#page14#enu6#sfld6" name="Grupo" type="string" modifiable="true"/>
+      <Link id="sv2#area4#page14#enu6#ln94" name="Link93" to="sv2#area4#opg8#cnu6" type="transport" validate="true">
+        <LinkParameter id="sv2#area4#page14#enu6#ln94#par105" name="Grupo_KeyCondition59 [oid] [Group] [Target]" source="sv2#area4#page14#enu6#sfld6" target="sv2#area4#opg8#cnu6#su75#kcond63.groupOID"/>
+      </Link>
+      <Link id="sv2#area4#page14#enu6#ln95" name="Adicionar" to="sv2#area4#opg8#cru3" type="normal" validate="true">
+        <LinkParameter id="sv2#area4#page14#enu6#ln95#par106" name="Email_email" source="sv2#area4#page14#enu6#fld16" target="sv2#area4#opg8#cru3.email"/>
+        <LinkParameter id="sv2#area4#page14#enu6#ln95#par107" name="Password_password" source="sv2#area4#page14#enu6#fld14" target="sv2#area4#opg8#cru3.password"/>
+        <LinkParameter id="sv2#area4#page14#enu6#ln95#par108" name="Nickname_userName" source="sv2#area4#page14#enu6#fld13" target="sv2#area4#opg8#cru3.userName"/>
+        <LinkParameter id="sv2#area4#page14#enu6#ln95#par12" name="Contacto_contacto" source="sv2#area4#page14#enu6#fld3" target="sv2#area4#opg8#cru3.User#att21"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="8" gr:y="0" id="sv2#area4#page14#seu13" name="Grupos" entity="Group">
+      <Link id="sv2#area4#page14#seu13#ln18" name="Link18" to="sv2#area4#page14#enu6" type="transport" validate="true">
+        <LinkParameter id="sv2#area4#page14#seu13#ln18#par28" name="groupName_Grupo [label]" source="groupNameArray" target="sv2#area4#page14#enu6#sfld6_label"/>
+        <LinkParameter id="sv2#area4#page14#seu13#ln18#par29" name="oid_Grupo [output]" source="groupOIDArray" target="sv2#area4#page14#enu6#sfld6_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area4#page14#inu8">
+          <layout:Link link="sv2#area4#page14#inu8#ln19"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area4#page14#enu6">
+          <layout:Link link="sv2#area4#page14#enu6#ln95"/>
+          <layout:Field field="sv2#area4#page14#enu6#fld13"/>
+          <layout:Field field="sv2#area4#page14#enu6#fld14"/>
+          <layout:Field field="sv2#area4#page14#enu6#fld15"/>
+          <layout:Field field="sv2#area4#page14#enu6#fld16"/>
+          <layout:Field field="sv2#area4#page14#enu6#sfld6"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

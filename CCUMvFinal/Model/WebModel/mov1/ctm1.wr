@@ -1,0 +1,43 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="92" gr:y="84" id="mov1#ctm1" name="Pesquisar material">
+  <ContentUnits>
+    <EntryUnit id="mov1#ctm1#enu15" name="Introduza a Disciplina" linkOrder="mov1#ctm1#enu15#ln5" gr:x="120" gr:y="40" fieldOrder="mov1#ctm1#enu15#fld3">
+      <Field id="mov1#ctm1#enu15#fld3" name="Disciplina" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#ctm1#enu15#fld3#mnd8" name="Required" errorMessage="O nome da Disciplina &#233; necess&#225;rio!"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#ctm1#enu15#ln5" name="Pesquisar" to="mov1#ctm1#inu2" type="normal" validate="true">
+        <LinkParameter id="mov1#ctm1#enu15#ln5#par1" name="Disciplina_Condi&#231;&#227;o" source="mov1#ctm1#enu15#fld3" target="mov1#ctm1#inu2#su4#acond2"/>
+      </Link>
+    </EntryUnit>
+    <IndexUnit id="mov1#ctm1#inu2" name="Material da Disciplina" gr:x="110" gr:y="130" entity="ent1" displayAttributes="ent1#att9 rel3#role6.ent5#att5" linkOrder="mov1#ctm1#inu2#ln6">
+      <SortAttribute attribute="ent1#att12" order="descending"/>
+      <Selector id="mov1#ctm1#inu2#su4" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#ctm1#inu2#su4#acond2" name="Condi&#231;&#227;o" predicate="contains" booleanOperator="and" implied="false" attributes="rel3#role6.ent5#att5" ignoreCase="true"/>
+      </Selector>
+      <Link id="mov1#ctm1#inu2#ln6" name="Detalhes" to="mov1#ctm1#ocu1" type="normal" validate="true">
+        <LinkParameter id="mov1#ctm1#inu2#ln6#par4" name="oid_Output Collector Parameter1" source="data[].ent1#att1" target="mov1#ctm1#ocu1#ocp1"/>
+      </Link>
+    </IndexUnit>
+    <OutputCollectorUnit gr:x="440" gr:y="150" id="mov1#ctm1#ocu1" name="Output Collector1">
+      <OutputCollectorParameter id="mov1#ctm1#ocu1#ocp1" name="Output Collector Parameter1"/>
+    </OutputCollectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#ctm1#enu15">
+          <layout:Field field="mov1#ctm1#enu15#fld3"/>
+          <layout:Link link="mov1#ctm1#enu15#ln5"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#ctm1#inu2">
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Attribute attribute="rel3#role6.ent5#att5"/>
+          <layout:Link link="mov1#ctm1#inu2#ln6"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>

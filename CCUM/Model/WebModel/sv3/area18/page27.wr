@@ -1,0 +1,53 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="436" gr:y="196" id="sv3#area18#page27" name="Adicionar pedido impress&#227;o">
+  <ContentUnits>
+    <EntryUnit gr:x="90" gr:y="0" id="sv3#area18#page27#enu14" name="Pedido de impress&#227;o" fieldOrder="sv3#area18#page27#enu14#fld2 sv3#area18#page27#enu14#fld17 sv3#area18#page27#enu14#fld29 sv3#area18#page27#enu14#fld30" linkOrder="sv3#area18#page27#enu14#ln102">
+      <Field id="sv3#area18#page27#enu14#fld2" type="integer" modifiable="true" name="N&#250;mero de c&#243;pias"/>
+      <Field id="sv3#area18#page27#enu14#fld30" name="Frente e verso" type="string" modifiable="true">
+        <VRules>
+          <TypeValidationRule id="sv3#area18#page27#enu14#fld30#tvr2" name="Boolean" type="boolean"/>
+        </VRules>
+      </Field>
+      <Field id="sv3#area18#page27#enu14#fld29" name="P&#225;ginas por folha" type="integer" modifiable="true"/>
+      <Field id="sv3#area18#page27#enu14#fld17" name="Cor" type="string" modifiable="true">
+        <VRules>
+          <TypeValidationRule id="sv3#area18#page27#enu14#fld17#tvr1" name="Boolean" type="boolean" errorMessage="Tem de ser 'true' ou 'false'"/>
+        </VRules>
+      </Field>
+      <Link id="sv3#area18#page27#enu14#ln102" name="Adicionar" to="sv3#area18#opg9#tmu5" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv3#area18#page27#enu14#ln104" name="Link104" to="sv3#area18#opg9#cru10" type="transport" validate="true">
+        <LinkParameter id="sv3#area18#page27#enu14#ln104#par37" name="Cor_cor" source="sv3#area18#page27#enu14#fld17" target="sv3#area18#opg9#cru10.ent6#att14"/>
+        <LinkParameter id="sv3#area18#page27#enu14#ln104#par39" name="Frente e verso_frente_verso" source="sv3#area18#page27#enu14#fld30" target="sv3#area18#opg9#cru10.ent6#att17"/>
+        <LinkParameter id="sv3#area18#page27#enu14#ln104#par40" name="N&#250;mero de c&#243;pias_nr_copias" source="sv3#area18#page27#enu14#fld2" target="sv3#area18#opg9#cru10.ent6#att15"/>
+        <LinkParameter id="sv3#area18#page27#enu14#ln104#par41" name="P&#225;ginas por folha_pag_por_folha" source="sv3#area18#page27#enu14#fld29" target="sv3#area18#opg9#cru10.ent6#att16"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit gr:x="0" gr:y="0" id="sv3#area18#page27#gtu13" name="Get User" contextParameters="UserCtxParam">
+      <Link id="sv3#area18#page27#gtu13#ln101" name="Link91" to="sv3#area18#opg9#cnu14" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area18#page27#enu14">
+          <layout:Field field="sv3#area18#page27#enu14#fld2"/>
+          <layout:Field field="sv3#area18#page27#enu14#fld17"/>
+          <layout:Field field="sv3#area18#page27#enu14#fld29"/>
+          <layout:Field field="sv3#area18#page27#enu14#fld30"/>
+          <layout:Link link="sv3#area18#page27#enu14#ln102"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
