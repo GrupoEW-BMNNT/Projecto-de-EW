@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="com.webratio.ide.ui.actions.MoveElementsAction.chooseTargetElementDialog">
+	</section>
+	<section name="WR5ImportProjectWizard">
+		<item value="/Users/tac/Dropbox/MEI/ACS/EW/Projecto-de-EW/CCUMvFinal" key="SOURCE_DIR"/>
+	</section>
 	<section name="com.webratio.ide.ui.actions.MoveDataModelElementsAction.chooseTargetElementDialog">
 	</section>
 </section>

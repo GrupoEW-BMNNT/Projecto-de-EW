@@ -1,4 +1,4 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="420" gr:y="1740" id="sv2#area7" name="Gest&#227;o Disciplinas" landmark="true" defaultPage="sv2#area7#page11">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="2320" gr:y="1270" id="sv2#area7" name="Gest&#227;o Disciplinas" landmark="true" defaultPage="sv2#area7#page11">
   <OperationUnits>
     <DeleteUnit gr:x="0" gr:y="20" id="sv2#area7#dlu5" name="Eliminar Disciplina" entity="ent5">
       <Selector id="sv2#area7#dlu5#su58" defaultPolicy="fill" booleanOperator="and">

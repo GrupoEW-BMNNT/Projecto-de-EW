@@ -19,7 +19,7 @@
         <LinkParameter id="mov1#ctm1#inu2#ln6#par4" name="oid_Output Collector Parameter1" source="data[].ent1#att1" target="mov1#ctm1#ocu1#ocp1"/>
       </Link>
     </IndexUnit>
-    <OutputCollectorUnit gr:x="440" gr:y="150" id="mov1#ctm1#ocu1" name="Output Collector1">
+    <OutputCollectorUnit gr:x="370" gr:y="130" id="mov1#ctm1#ocu1" name="Output Collector1">
       <OutputCollectorParameter id="mov1#ctm1#ocu1#ocp1" name="Output Collector Parameter1"/>
     </OutputCollectorUnit>
   </ContentUnits>

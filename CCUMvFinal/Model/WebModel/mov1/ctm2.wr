@@ -28,7 +28,7 @@
         <LinkParameter id="mov1#ctm2#seu7#ln66#par55" name="Sigla_Curso[Sigla]" source="ent9#att13Array" target="mov1#ctm2#enu17#sfld4#slot21"/>
       </Link>
     </SelectorUnit>
-    <OutputCollectorUnit gr:x="488" gr:y="147" id="mov1#ctm2#ocu2" name="Output Collector2">
+    <OutputCollectorUnit gr:x="310" gr:y="100" id="mov1#ctm2#ocu2" name="Output Collector2">
       <OutputCollectorParameter id="mov1#ctm2#ocu2#ocp2" name="Output Collector Parameter2"/>
     </OutputCollectorUnit>
   </ContentUnits>
